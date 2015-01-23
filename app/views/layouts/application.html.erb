@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<div class="navbar">
+  <div class="container">
+    <!-- navbar here -->
+  </div>
+</div>
+<div class="container">
+  <%= yield %>
+</div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class= "col-xs-6">
+Created by Andrew James
+      </div>
+
+      <div class="col-xs-6 text-right">
+        <%= link_to(image_tag("linkedin_icon.jpg", class:"img-footer", alt:"Linked in"), "https://www.linkedin.com/pub/andrew-james/3b/889/443") %>
+        <%= link_to(image_tag("GitHub_icon.png", class:"img-footer", alt:"GitHub"), "https://github.com/andrewpjames13") %>
+        <%= link_to(image_tag("Twitter_icon.png", class:"img-footer", alt:"Twitter"), "https://twitter.com/ajamesDesign13") %>
+        <%= link_to(image_tag("galvanize_icon.png", class:"img-footer", alt:"galvanize"), "https://students.gschool.it/students/198") %>
+      </div>
+    </div>  </div>
+</footer>
+<body>
+
+
+</body>
+</html>
