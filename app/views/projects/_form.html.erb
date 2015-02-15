@@ -1,0 +1,16 @@
+<%= form_for @project do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :short_description %>
+  <%= f.text_field :short_description %>
+
+  <%= f.label :long_description %>
+  <%= f.text_field :long_description %>
+
+  <%= f.label :hero_image %>
+  <%= f.file_field :hero_image %>
+
+  <%= f.submit %>
+<% end %>
