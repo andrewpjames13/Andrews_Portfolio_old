@@ -1,5 +1,8 @@
 class ProjectsController < ApplicationController
 
+  # only allow users who aren't logged in to use the show actions
+  before_action :authenticate, except: [:show]
+
   def index
     @projects = Project.all
   end
