@@ -3,32 +3,43 @@
 <head>
   <title>Portfolio</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
 </head>
-<div class="header">
-  <div class="container">
-    <% if current_user %>
-    Logged in as: <strong><%= current_user.email %></strong>
-    <%= link_to 'Sign Out', signout_path %>
-    <% else %>
-    <%= link_to 'Sign Up', signup_path %>
-    <%= link_to 'Sign In', signin_path %>
-    <% end %>
-  </div>
-</div>
+  <header>
+    <div class="container">
+      <nav>
+        <div class= "grid">
+          <ul>
+            <li class="col-3-12" ></li>
+            <li class="col-1-12" ><%= link_to 'Portfolio', "#" %></li>
+            <li class="col-1-12" ><%= link_to 'Capabilities', "#" %></li>
+            <li class="col-2-12" ><%= link_to(image_tag("&ru-logo.jpg", class:"logo", alt:"Andrew James Design"), "#") %></li>
+            <li class="col-1-12" ><%= link_to 'About', "#" %></li>
+            <li class="col-1-12" ><%= link_to 'Contact', "#" %></li>
+            <li class="col-3-12" ></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
 
   <%= yield %>
 
-<div class="footer">
-  <div class="container">
+
+  <!-- <div class="footer">
+
+
 
         <%= link_to 'LinkedIn', "https://www.linkedin.com/pub/andrew-james/3b/889/443" %>
         <%= link_to 'github', "https://github.com/andrewpjames13" %>
         <%= link_to 'Twitter', "https://twitter.com/ajamesDesign13" %>
         <%= link_to 'gSchool', "https://students.gschool.it/students/198" %>
-      </div>
-</footer>
+
+    </div> -->
 <body>
 
 
