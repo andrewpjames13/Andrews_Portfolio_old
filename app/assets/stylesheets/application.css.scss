@@ -27,8 +27,17 @@ header {
   // z-index: 100;
 }
 
+footer {
+  background: #333333;
+  width: 100%;
+  height: 140px;
+  position: absolute;
+  margin: 0;
+
+}
+
 a {
-  color: #333333;
+  color: white;
   text-decoration: none;
   font-weight: 300;
   font-size: 1em;
@@ -37,24 +46,25 @@ a {
 
 a:hover {
   color: #f1f1f1;
-
 }
 
+a.foothov:hover {
+  color: #05dba7;
+}
 ul {
   list-style: none;
 }
 
 li {
   display: inline-block;
-  padding: 50px 0 4% 0;
+  padding: 30px 0 4% 0;
   text-align:center;
-  height: 75px;
+  // height: 75px;
 }
 
 h3 {
   color: #05dba7;
   // padding: 0 0 .5% 0;
-
 }
 
 h2 {
@@ -72,7 +82,7 @@ h2 {
 }
 
 .grid {
-  margin: 0 0px 0 0px;
+  margin: 0;
 
 
   &:after {
@@ -142,7 +152,7 @@ h2 {
   background: #333333;
   width: 100%;
   margin: 8.3% 0 0 0;
-  height: 1000px;
+  height: 900px;
 }
 
 .title-header {
@@ -157,12 +167,20 @@ hr {
   width: 100%;
 }
 
+.t-white {
+  color: white;
+}
+
 .pad-b {
   padding-bottom: 8.3%;
 }
 
 .pad-r {
   padding-right: 8.3%;
+}
+
+.spacer {
+  margin: 8.3% 0 8.3% 0;
 }
 // nav {
 //   text-align: center;
