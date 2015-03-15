@@ -10,20 +10,19 @@
 </head>
   <header>
     <div class="container">
-        <div class= "grid">
+        <!-- <div class= "grid"> -->
           <ul>
-            <li class="col-3-12" ></li>
-            <li class="col-1-12" ><%= link_to 'Portfolio', "#" %></li>
-            <li class="col-1-12" ><%= link_to 'Capabilities', "#" %></li>
+            <li class="col-2-12 header" ></li>
+            <li class="col-1-12 header" ><%= link_to 'Portfolio', "#", class:"t-grey" %></li>
+            <li class="col-1-12 header" ><%= link_to 'Capabilities', "#", class:"t-grey" %></li>
           </ul>
             <div class="col-2-12" ><%= link_to(image_tag("&ru-logo.jpg", class:"logo", alt:"Andrew James Design"), "#") %></div>
           <ul>
-            <li class="col-1-12" ><%= link_to 'About', "#" %></li>
-            <li class="col-1-12" ><%= link_to 'Contact', "#" %></li>
+            <li class="col-1-12 header" ><%= link_to 'About', "#", class:"t-grey" %></li>
+            <li class="col-1-12 header" ><%= link_to 'Contact', "#", class:"t-grey" %></li>
             <li class="col-3-12" ></li>
           </ul>
-        </div>
-      </nav>
+        <!-- </div> -->
   </header>
 
 
@@ -33,7 +32,7 @@
     <footer>
       <div class="container">
         <div class="col-1-12">
-          <%= image_tag "&ru-logo-footer.png", class:"logo", alt:"Andrew James Design" %>
+          <%= image_tag "&ru-logo-footer.png", alt:"Andrew James Design" %>
         </div>
         <ul class="t-white">
           <li class="col-1-12 t-white"><%= link_to 'Github', "https://github.com/andrewpjames13", class:"foothov" %></li>
