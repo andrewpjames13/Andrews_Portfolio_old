@@ -2,18 +2,18 @@
 html {
   -webkit-font-smoothing: antialiased;
   font-family: 'Roboto', sans-serif;
-  font-color: white;
+  color: white;
 }
 
 body {
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 1.25em;
   background: #f1f1f1;
 }
 
 .home-hero {
   background: #05dba7;
-  height: 650px;
+  height: 600px;
   width: 100%;
   margin: 0 0 8.3% 0;
   // height: 40em;
@@ -56,6 +56,15 @@ h3 {
   // padding: 0 0 .5% 0;
 
 }
+
+h2 {
+  color: #05dba7;
+  font-size: 3em;
+  font-weight: 400;
+  line-height: 1.1em;
+  padding: 0 0 0 8.3%;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1508px;
@@ -148,8 +157,12 @@ hr {
   width: 100%;
 }
 
-.t-white {
-  color: white;
+.pad-b {
+  padding-bottom: 8.3%;
+}
+
+.pad-r {
+  padding-right: 8.3%;
 }
 // nav {
 //   text-align: center;
