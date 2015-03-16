@@ -20,6 +20,15 @@ body {
   // height: 40em;
 }
 
+.project-hero {
+  background: #05dba7;
+  // height: 600px;
+  width: 100%;
+  // margin: 0 0 8.3% 0;
+  padding: 15% 0 15% 0;
+  // height: 40em;
+}
+
 .hlogo{
   margin: 0 auto;
   display: block;
@@ -32,7 +41,7 @@ header {
   position: fixed;
   opacity: 0.95;
 
-  // z-index: 100;
+  z-index: 100;
 }
 
 footer {
@@ -142,9 +151,12 @@ h2 {
   width: 58.3%;
 }
 
+.col-8-12 {
+  width: 66.6%;
+}
+
 .clear {
   float:none;
-  color:red;
 }
 
 .f-right {
@@ -170,6 +182,13 @@ h2 {
   width: 100%;
   margin: 8.3% 0 0 0;
   height: 900px;
+}
+
+.dark-bg-p {
+  background: #333333;
+  width: 100%;
+  margin: 0 0 0 0;
+  height: 100%;
 }
 
 .title-header {
@@ -199,6 +218,20 @@ hr {
 .logo{
   margin: -8px auto;
   display: block;
+}
+// Sign up form
+
+.form {
+  margin: 0 auto;
+  width: 50%;
+  height: 50px;
+  background: white;
+  padding: 25% 0 25% 0;
+}
+
+.form-body {
+  height: 100%;
+  width: 100%;
 }
 
 // nav {

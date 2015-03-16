@@ -1,7 +1,11 @@
-<%= form_tag signin_path do %>
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag 'Sign In' %>
-<% end %>
+<div class="container">
+  <div class="form">
+    <%= form_tag signin_path do %>
+      <%= label_tag :email %>
+      <%= email_field_tag :email %>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+      <%= submit_tag 'Sign In' %>
+    <% end %>
+  </div>
+</div>
