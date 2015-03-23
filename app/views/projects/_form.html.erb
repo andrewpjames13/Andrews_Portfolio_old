@@ -1,4 +1,4 @@
-<%= form_for @project do |f| %>
+<%= form_for @project, :html => {:multipart => true} do |f| %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -9,8 +9,8 @@
   <%= f.label :long_description %>
   <%= f.text_field :long_description %>
 
-  <%= f.label :hero_image %>
-  <%= f.file_field :hero_image %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
 
   <%= f.submit %>
 <% end %>
