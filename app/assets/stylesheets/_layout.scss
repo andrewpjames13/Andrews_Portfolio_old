@@ -1,0 +1,117 @@
+.container {
+  margin: 0 auto;
+  max-width: 1508px;
+  padding: 0 8.3% 0 8.3%;
+}
+
+.grid {
+  margin: auto 0;
+
+
+  &:after {
+    /* Or @extend clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[class*='col-'] {
+  float: left;
+  // padding-right: 20px;
+  .grid &:last-of-type {
+    // padding-right: 0;
+  }
+}
+
+.col-1-12 {
+  width: 8.3%;
+}
+
+.col-2-12 {
+  width: 16.6%;
+}
+
+.col-3-12 {
+  width: 25%;
+}
+
+.col-4-12 {
+  width: 33.3%;
+}
+
+.col-5-12 {
+  width: 41.6%;
+}
+
+.col-7-12 {
+  width: 58.3%;
+}
+
+.col-8-12 {
+  width: 66.6%;
+}
+
+.clear {
+  float:none;
+}
+
+.f-right {
+  float:right;
+}
+
+.big-box {
+  padding: 20px;
+  background: $darkgray;
+  margin: 3px;
+  height: 608px;
+}
+
+.small-box {
+  padding: 20px;
+  background: $darkgray;
+  margin: 3px;
+  height: 301px;
+}
+
+.dark-bg {
+  background: $darkgray;
+  width: 100%;
+  margin: 8.3% 0 0 0;
+  height: 900px;
+}
+
+.dark-bg-p {
+  background: $darkgray;
+  width: 100%;
+  margin: 0 0 0 0;
+  height: 100%;
+}
+
+hr {
+  color: #FFFFFF;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+
+}
+
+li {
+  display: inline-block;
+  padding: 30px 0 4% 0;
+  text-align:center;
+}
+
+.pad-b {
+  padding-bottom: 8.3%;
+}
+
+.pad-r {
+  padding-right: 8.3%;
+}
+
+.t-darkgray {
+  color: $darkgray;
+}
