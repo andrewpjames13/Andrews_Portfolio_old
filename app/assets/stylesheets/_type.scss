@@ -7,7 +7,7 @@ html {
 body {
   background-color: $gray;
   font-family: Roboto;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1em;
   line-height: 1.25;
   color: $gray;
@@ -49,4 +49,5 @@ small, .font_small {font-size: 0.707em;}
 
 .t-green {
   color: $green;
+  font-weight: 500;
 }
