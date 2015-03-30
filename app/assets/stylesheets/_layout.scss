@@ -67,6 +67,13 @@
   margin: 3px;
 }
 
+.small-box {
+  position: relative;
+  overflow: hidden;
+  background: $green;
+  margin: 3px;
+}
+
 figure {
   margin: 0;
   position: relative;
@@ -79,31 +86,24 @@ figure img {
   position: relative;
 }
 
-// .hov {
-//   -webkit-transition: all .5s ease-in-out;
-//      -moz-transition: all .5s ease-in-out;
-//        -o-transition: all .5s ease-in-out;
-//       -ms-transition: all .5s ease-in-out;
-//           transition: all .5s ease-in-out;
-// }
-//
-// .hov:hover {
-//   -webkit-filter: opacity(0.1);
-// }
-
 
 .big-box .mask, .big-box .content {
    width: 100%;
    height: 100%;
    position: absolute;
    overflow: hidden;
-  //  top: 0;
-  //  left: 0;
+}
+
+.small-box .mask, .small-box .content {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   overflow: hidden;
 }
 
 .effect .mask {
    opacity: 0;
-   padding: 30% 20%;
+  //  padding: 30% 20%;
    text-align: center;
    transition: all 0.4s ease-in-out;
 }
@@ -113,11 +113,25 @@ figure img {
    background-color: #2c5148;
 }
 
-.small-box {
-  position: relative;
-  overflow: hidden;
-  background: $green;
-  margin: 3px;
+.projecthead {
+    width: 70%;
+}
+
+.big-con {
+  margin: 30% 20% 0 20%;
+}
+
+.small-con {
+  margin: 10% 10% 0 10%;
+}
+
+.link {
+  text-color: $green;
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  padding: 0 10% 10% 0;
+  bottom: 0;
 }
 
 .dark-bg {
@@ -159,6 +173,10 @@ li {
   padding-right: 8.3%;
 }
 
-.t-darkgray {
-  color: $darkgray;
+#about {
+  margin: 8.3% 0;
+}
+
+#contact {
+  margin: 8.3% 0;
 }

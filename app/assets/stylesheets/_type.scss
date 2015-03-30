@@ -15,7 +15,7 @@ body {
 
 p {
   margin-bottom: 1.3em;
-    
+
 }
 
 h1, h2, h3, h4 {
@@ -42,3 +42,11 @@ h3 {font-size: 1.2em;}
 h4 {font-size: 1.414em;}
 
 small, .font_small {font-size: 0.707em;}
+
+.t-darkgray {
+  color: $darkgray;
+}
+
+.t-green {
+  color: $green;
+}
