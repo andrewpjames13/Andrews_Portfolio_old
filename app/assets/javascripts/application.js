@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery-ui
 //= require_tree .
+
+$(document).ready(function() {
+  $('.welcome-page .header a').click(function(e) {
+    var scrollTo = $.attr(this, 'href').replace('/', '')
+    e.preventDefault();
+    $('.welcome-page').animate({scrollTop: $(scrollTo).offset().top}, {easing: 'swing', duration: 'slow'});
+  });
+});
