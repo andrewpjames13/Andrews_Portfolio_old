@@ -26,3 +26,9 @@ a.foothov:hover {
   padding: 0 8.3% 0 8.3%;
 
 }
+
+@media screen and (max-width: 700px) {
+  .foot {
+    margin: 0 10% 0 0;
+  }
+}
