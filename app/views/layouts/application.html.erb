@@ -8,15 +8,28 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
 
 </head>
+<div id="sidebar">
+  <div class="col-2-12" ><%= link_to(image_tag("&ru-logo.jpg", class:"logo", alt:"Andrew James Design"), root_path + "#home") %></div>
+  <ul>
+    <li><%= link_to 'Portfolio', root_path + "#portfolio", class:"t-darkgray" %></li>
+    <li><%= link_to 'Capabilities', root_path + "#capabilities", class:"t-darkgray" %></li>
+    <li><%= link_to 'About', root_path + "#about", class:"t-darkgray" %></li>
+    <li><%= link_to 'Contact', root_path + "#about", class:"t-darkgray" %></li>
+  </ul>
+</div>
+<div class="sidecontainer">
+
 <body class="<%= controller_name %>-page">
 
   <header>
+
+    <a href="#" id="menu-icon"></a>
 
     <div class="container header">
         <!-- <div class= "grid"> -->
           <ul>
             <li class="col-3-12 header" ></li>
-            <li class="col-1-12 header" ><%= link_to 'Portfolio', root_path + "#portfolio", class:"t-darkgray portfolio" %></li>
+            <li class="col-1-12 header" ><%= link_to 'Portfolio', root_path + "#portfolio", class:"t-darkgray" %></li>
             <li class="col-1-12 header" ><%= link_to 'Capabilities', root_path + "#capabilities", class:"t-darkgray" %></li>
           </ul>
             <div class="col-2-12" ><%= link_to(image_tag("&ru-logo.jpg", class:"logo", alt:"Andrew James Design"), root_path + "#home") %></div>
@@ -48,5 +61,6 @@
 
 
   </body>
+</div>
 
 </html>
