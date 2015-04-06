@@ -50,7 +50,7 @@ $(document).ready(function() {
   });
 
   var count = 0;
-  $('#menu-icon').click(function() {
+  $('#menu-icon').css({cursor: "pointer"}).click(function() {
     $('#menu-icon').each(function() {
       if (count == 0) {
         $('#sidebar').toggle("slide");
