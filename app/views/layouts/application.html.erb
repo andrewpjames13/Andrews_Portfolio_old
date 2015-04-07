@@ -11,10 +11,10 @@
 <div id="sidebar">
   <div class="col-2-12" ><%= link_to(image_tag("&ru-logo.jpg", class:"logo", alt:"Andrew James Design"), root_path + "#home") %></div>
   <ul>
-    <li><%= link_to 'Portfolio', root_path + "#portfolio", class:"t-darkgray" %></li>
-    <li><%= link_to 'Capabilities', root_path + "#capabilities", class:"t-darkgray" %></li>
-    <li><%= link_to 'About', root_path + "#about", class:"t-darkgray" %></li>
-    <li><%= link_to 'Contact', root_path + "#about", class:"t-darkgray" %></li>
+    <li class="side-nav"><%= link_to 'Portfolio', root_path + "#portfolio", class:"t-darkgray" %></li>
+    <li class="side-nav"><%= link_to 'Capabilities', root_path + "#capabilities", class:"t-darkgray" %></li>
+    <li class="side-nav"><%= link_to 'About', root_path + "#about", class:"t-darkgray" %></li>
+    <li class="side-nav"><%= link_to 'Contact', root_path + "#about", class:"t-darkgray" %></li>
   </ul>
 </div>
 <div class="sidecontainer">
@@ -54,7 +54,7 @@
           <li class="col-1-12 foot"><%= link_to 'Github', "https://github.com/andrewpjames13", class:"foothov" %></li>
           <li class="col-1-12 foot"><%= link_to 'LinkedIn', "https://www.linkedin.com/pub/andrew-james/3b/889/443", class:"foothov" %></li>
           <li class="col-1-12 foot"><%= link_to 'Twitter', "https://twitter.com/ajamesDesign13", class:"foothov" %></li>
-          <li class="col-2-12 f-right">&copy; <%= Time.now.year %> &RU Design</li>
+          <li class="col-2-12 f-right align-right">&copy; <%= Time.now.year %> &RU Design</li>
         </ul>
       </div>
     </footer>

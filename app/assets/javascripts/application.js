@@ -43,8 +43,8 @@
 
 
 $(document).ready(function() {
-  $('.welcome-page .header, #sidebar a').click(function(e) {
-    var scrollTo = $.attr(this, 'href').replace('/', '')
+  $('.welcome-page .header a, #sidebar a').click(function(e) {
+    var scrollTo = $.attr(this, 'href').replace('/', '');
     e.preventDefault();
     $('.welcome-page').animate({scrollTop: $(scrollTo).offset().top, easing: 'easeInOutQuart', duration: 'slow'}, 1000);
   });

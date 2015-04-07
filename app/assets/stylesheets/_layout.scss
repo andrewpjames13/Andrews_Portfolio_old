@@ -196,3 +196,11 @@ li {
 -moz-box-shadow: inset 1px 0px 16px 0px rgba(0,0,0,0.75);
 box-shadow: inset 1px 0px 16px 0px rgba(0,0,0,0.75);
 }
+
+@media screen and (max-width: 700px) {
+
+.resp {
+  float: left;
+  width: 25%;
+}
+}
