@@ -9,58 +9,60 @@
 
 </head>
 <div id="sidebar">
-  <div class="col-2-12" ><%= link_to(image_tag("&ru-logo.jpg", class:"logo", alt:"Andrew James Design"), root_path + "#home") %></div>
-  <ul>
-    <li class="side-nav"><%= link_to 'Portfolio', root_path + "#portfolio", class:"t-darkgray" %></li>
-    <li class="side-nav"><%= link_to 'Capabilities', root_path + "#capabilities", class:"t-darkgray" %></li>
-    <li class="side-nav"><%= link_to 'About', root_path + "#about", class:"t-darkgray" %></li>
-    <li class="side-nav"><%= link_to 'Contact', root_path + "#about", class:"t-darkgray" %></li>
+  <!-- <div class="col-6-12" ><%= link_to(image_tag("side-menu-icon.png", class:"side-nav-icon", alt:"Andrew James Design")) %></div> -->
+
+  <!-- <div class="col-6-12" ><%= link_to(image_tag("&ru-logo-footer.png", class:"logo", alt:"Andrew James Design"), root_path + "#home") %></div> -->
+  <ul class="side-nav">
+    <li class="side-nav"><%= link_to 'Portfolio', root_path + "#portfolio" %></li>
+    <li class="side-nav"><%= link_to 'Capabilities', root_path + "#capabilities" %></li>
+    <li class="side-nav"><%= link_to 'About', root_path + "#about" %></li>
+    <li class="side-nav"><%= link_to 'Contact', root_path + "#about" %></li>
   </ul>
 </div>
-<div class="sidecontainer">
+<header>
 
-<body class="<%= controller_name %>-page">
+  <a id="menu-icon"></a>
 
-  <header>
-
-    <a id="menu-icon"></a>
-
-    <div class="container header">
-        <!-- <div class= "grid"> -->
-          <ul>
-            <li class="col-3-12 header" ></li>
-            <li class="col-1-12 header" ><%= link_to 'Portfolio', root_path + "#portfolio", class:"t-darkgray" %></li>
-            <li class="col-1-12 header" ><%= link_to 'Capabilities', root_path + "#capabilities", class:"t-darkgray" %></li>
-          </ul>
-            <div class="col-2-12" ><%= link_to(image_tag("&ru-logo.jpg", class:"logo", alt:"Andrew James Design"), root_path + "#home") %></div>
-          <ul>
-            <li class="col-1-12 header" ><%= link_to 'About', root_path + "#about", class:"t-darkgray" %></li>
-            <li class="col-1-12 header" ><%= link_to 'Contact', root_path + "#about", class:"t-darkgray" %></li>
-            <li class="col-3-12 header" ></li>
-          </ul>
-        <!-- </div> -->
+  <div class="container header">
+    <!-- <div class= "grid"> -->
+    <ul>
+      <li class="col-3-12 header" ></li>
+      <li class="col-1-12 header" ><%= link_to 'Portfolio', root_path + "#portfolio", class:"t-darkgray" %></li>
+      <li class="col-1-12 header" ><%= link_to 'Capabilities', root_path + "#capabilities", class:"t-darkgray" %></li>
+    </ul>
+    <div class="col-2-12" ><%= link_to(image_tag("&ru-logo.jpg", class:"logo", alt:"Andrew James Design"), root_path + "#home") %></div>
+    <ul>
+      <li class="col-1-12 header" ><%= link_to 'About', root_path + "#about", class:"t-darkgray" %></li>
+      <li class="col-1-12 header" ><%= link_to 'Contact', root_path + "#about", class:"t-darkgray" %></li>
+      <li class="col-3-12 header" ></li>
+    </ul>
+    <!-- </div> -->
   </header>
 
+  <div class="sidecontainer">
 
-  <%= yield %>
+    <body class="<%= controller_name %>-page">
 
 
-    <footer>
-      <div class="container footer">
-        <div class="col-1-12 foot">
-          <%= link_to(image_tag("&ru-logo-footer.png", alt:"Andrew James Design"), "#home") %>
+      <%= yield %>
+
+
+      <footer>
+        <div class="container footer">
+          <div class="col-1-12 foot">
+            <%= link_to(image_tag("&ru-logo-footer.png", alt:"Andrew James Design"), "#home") %>
+          </div>
+          <ul>
+            <li class="col-1-12 foot"><%= link_to 'Github', "https://github.com/andrewpjames13", class:"foothov" %></li>
+            <li class="col-1-12 foot"><%= link_to 'LinkedIn', "https://www.linkedin.com/pub/andrew-james/3b/889/443", class:"foothov" %></li>
+            <li class="col-1-12 foot"><%= link_to 'Twitter', "https://twitter.com/ajamesDesign13", class:"foothov" %></li>
+            <li class="col-2-12 f-right align-right">&copy; <%= Time.now.year %> &RU Design</li>
+          </ul>
         </div>
-        <ul>
-          <li class="col-1-12 foot"><%= link_to 'Github', "https://github.com/andrewpjames13", class:"foothov" %></li>
-          <li class="col-1-12 foot"><%= link_to 'LinkedIn', "https://www.linkedin.com/pub/andrew-james/3b/889/443", class:"foothov" %></li>
-          <li class="col-1-12 foot"><%= link_to 'Twitter', "https://twitter.com/ajamesDesign13", class:"foothov" %></li>
-          <li class="col-2-12 f-right align-right">&copy; <%= Time.now.year %> &RU Design</li>
-        </ul>
-      </div>
-    </footer>
+      </footer>
 
 
-  </body>
+    </body>
+  </div>
 </div>
-
 </html>
