@@ -66,7 +66,163 @@ $(document).ready(function() {
     });
   });
 
+
+  // function abc() {
+  //   // Some code
+  //   var a =  $("#amount").val();
+  //   $(".knob").css({ 'transform':'rotate('+degree+'deg)' });
+  //
+  // }
+  // $(function() {
+  //    $("#slider").slider({
+  //      range: "min",
+  //      value: 100,
+  //      min: 0,
+  //      max: 225,
+  //      slide: function(event, ui) {
+  //        $("#amount").val(ui.value);
+  //        abc()
+  //        }
+  //      });
+  //    });
+
+  // var mouseStillDown = false;
+  // var degree = 10;
+  // $('.knob').mousedown(function(){
+  //   mouseXStart = Math.round (event.clientX);
+  //   mouseYStart = Math.round (event.clientY);
+  //   mouseStillDown = true;
+  //
+  //   if (mouseStillDown == true) {
+  //     $('.knob').mousemove(function(event){
+  //       mouseX = Math.round (event.clientX);
+  //       mouseY = Math.round (event.clientY);
+  //
+  //       // console.log(mouseXStart, mouseYStart);
+  //       // console.log(mouseX, mouseY);
+  //       // degree = (mouseX - mouseXStart) + (mouseY - mouseYStart);
+  //       console.log(degree);
+  //     });
+  //   }
+  //
+  //   $('.knob').css({ 'transform':'rotate('+degree+'deg)' });
+  //   console.log(mouseStillDown);
+  // });
+  //
+  //
+  // $('.knob').mouseup(function(){
+  //   mouseStillDown = false;
+  //   console.log(mouseStillDown);
+  //
+  // });
+
+  // var mouseStillDown = false;
+  // var RAD2DEG = 180 / Math.PI;
+  // var knob = $(".knob");
+  // var min = 0;
+  // var max = 270;
+  // knob.centerX = knob.offset().left + knob.width()/2;
+  // knob.centerY =  knob.offset().top + knob.height()/2;
+  //
+  // $('.knob').mousedown(function(e){
+  //   mouseStillDown = true;
+  //   offset = Math.atan2(knob.centerY - e.pageY, e.pageX - knob.centerX);
+  // });
+  //
+  // $('.knob').mouseup(function(){
+  //   mouseStillDown = false;
+  // });
+  //
+  // $('.knob').mousemove(function(e){
+  //   if (mouseStillDown) {
+  //     var mouseX = e.pageX;
+  //     var mouseY = e.pageY;
+  //     var radians = Math.atan2(mouseX, mouseY);
+  //     var newOffset = Math.atan2(knob.centerY - e.pageY, e.pageX - knob.centerX);
+  //
+  //     var degree = (offset - newOffset) * RAD2DEG;
+  //
+  //     $('.knob').css({ 'transform':'rotate('+degree+'deg)' });
+  //     console.log(degree);
+  //
+  //   }
+  // });
+
+  var mouseStillDown = false;
+  var Rad2DdeG = 180 / Math.PI;
+  var knob = $(".knob");
+  var min = 0;
+  var max = 270;
+  knob.centerX = knob.offset().left + knob.width()/2;
+  knob.centerY = knob.offset().top + knob.height()/2;
+
+  $('.knob').mousedown(function(e){
+    mouseStillDown = true;
+    offset = Math.atan2(knob.centerY - e.pageY, e.pageX - knob.centerX);
+  });
+
+  $('.knob').mouseup(function(){
+    mouseStillDown = false;
+  });
+
+  $('.knob').mousemove(function(e){
+    if (mouseStillDown) {
+      var mouseX = e.pageX;
+      var mouseY = e.pageY;
+      var radians = Math.atan2(mouseX, mouseY);
+      var newOffset = Math.atan2(knob.centerY - mouseY, mouseX - knob.centerX);
+
+      var degree = (offset - newOffset) * Rad2DdeG;
+      degree = (degree + 360) % 360;
+
+      if (degree < 0)  {
+        degree = 360 + degree
+      }
+
+      if (degree < 0 || degree > 300) {
+        degree = min
+      }
+
+      if (degree > 270) {
+        degree = max
+      }
+      console.log(degree);
+
+      $('.knob').css({ 'transform':'rotate('+degree+'deg)' });
+      var activeTicks = (Math.round(degree / 10) + 1);
+      $('.tick').removeClass('activetick');
+      $('.tick').slice(0,activeTicks).addClass('activetick');
+
+    }
+  });
+
+
+
 });
+
+
+
+
+// var mouseStillDown = false;
+//
+// $(document).mousedown(function(event) {
+//     mouseStillDown = true;
+//     doSomething();
+// });
+//
+// function doSomething() {
+//     if (!mouseStillDown) { return; } // we could have come back from
+//                                      // SetInterval and the mouse is no longer down
+//     // do something
+//
+//     if (mouseStillDown) { setInterval("doSomething", 100); }
+// }
+//
+// $(document).mouseup(function(event) {
+//     mouseStillDown = false;
+// });
+
+
 
 // $('#menu-icon').css({cursor: "pointer"}).on('click', function() {
 //   // $('#menu-icon, header').fadeOut('fast')

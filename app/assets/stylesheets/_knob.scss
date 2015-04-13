@@ -1,0 +1,137 @@
+@mixin transform($arguments) {
+  -webkit-transform: $arguments;
+  -moz-transform: $arguments;
+  -o-transform: $arguments;
+  -ms-transform: $arguments;
+  transform: $arguments;
+}
+
+@mixin transition($arguments) {
+  -webkit-transition: $arguments;
+  -moz-transition: $arguments;
+  -o-transition: $arguments;
+  transition: $arguments;
+}
+
+@mixin box-shadow($arguments) {
+  -webkit-box-shadow: $arguments;
+  -moz-box-shadow: $arguments;
+  box-shadow: $arguments;
+}
+.knob-space{
+  padding: 0;
+}
+
+.knob-back{
+  // position: relative;
+  background-image: url("knob-back.jpg");
+  background-repeat: no-repeat;
+  width:100%;
+  height: auto;
+  // margin: 0 auto;
+  // display: block;
+  // z-index:-1;
+}
+
+.knob-hero {
+  background-image: url("dark-tweed.jpg");
+  margin: 0 auto;
+  width: 100%;
+  height: 50%;
+  padding: 20% 0 13% 0;
+  display:block;
+}
+
+.knob-surround {
+  position: relative;
+  background-image: url("dark-tweed.jpg");
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+  border: solid .25em #202020;
+  margin: 0 auto;
+  @include box-shadow(inset 0px 0px 15px 0px rgba(184,184,184,.3));
+}
+
+.knob {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  @include transform(rotate(0deg));
+  z-index: 10;
+  // @include transition(all 0.3s ease-in-out);
+
+}
+
+.knob:before {
+  content: "";
+  position: absolute;
+  bottom: 16%;
+  left: 24%;
+  width: .75%;
+  height: 15%;
+  background-color: $green;
+  @include transform(rotate(-135deg));
+  @include box-shadow(0 0 .4em 0 $green);
+}
+
+.tick {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  overflow: visible;
+}
+
+.tick:after {
+  content: "";
+  width: .08em;
+  height: .6em;
+  background-color: rgba(255,255,255,.2);
+  position: absolute;
+  top: -1.5em;
+  left: 50%;
+  @include transition(all 180ms ease-out);
+}
+
+.activetick:after {
+  background-color: $green;
+  @include box-shadow(0 0 .3em .08em darken(#000000, 10%));
+  @include transition(all 50ms ease-in);
+}
+
+.tick:nth-child(1)  { @include transform(rotate(-135deg)); }
+.tick:nth-child(2)  { @include transform(rotate(-125deg)); }
+.tick:nth-child(3)  { @include transform(rotate(-115deg)); }
+.tick:nth-child(4)  { @include transform(rotate(-105deg)); }
+.tick:nth-child(5)  { @include transform(rotate(-95deg));  }
+.tick:nth-child(6)  { @include transform(rotate(-85deg));  }
+.tick:nth-child(7)  { @include transform(rotate(-75deg));  }
+.tick:nth-child(8)  { @include transform(rotate(-65deg));  }
+.tick:nth-child(9)  { @include transform(rotate(-55deg));  }
+.tick:nth-child(10) { @include transform(rotate(-45deg));  }
+.tick:nth-child(11) { @include transform(rotate(-35deg));  }
+.tick:nth-child(12) { @include transform(rotate(-25deg));  }
+.tick:nth-child(13) { @include transform(rotate(-15deg));  }
+.tick:nth-child(14) { @include transform(rotate(-5deg));   }
+.tick:nth-child(15) { @include transform(rotate(5deg));    }
+.tick:nth-child(16) { @include transform(rotate(15deg));   }
+.tick:nth-child(17) { @include transform(rotate(25deg));   }
+.tick:nth-child(18) { @include transform(rotate(35deg));   }
+.tick:nth-child(19) { @include transform(rotate(45deg));   }
+.tick:nth-child(20) { @include transform(rotate(55deg));   }
+.tick:nth-child(21) { @include transform(rotate(65deg));   }
+.tick:nth-child(22) { @include transform(rotate(75deg));   }
+.tick:nth-child(19) { @include transform(rotate(45deg));   }
+.tick:nth-child(20) { @include transform(rotate(55deg));   }
+.tick:nth-child(21) { @include transform(rotate(65deg));   }
+.tick:nth-child(22) { @include transform(rotate(75deg));   }
+.tick:nth-child(23) { @include transform(rotate(85deg));   }
+.tick:nth-child(24) { @include transform(rotate(95deg));   }
+.tick:nth-child(25) { @include transform(rotate(105deg));  }
+.tick:nth-child(26) { @include transform(rotate(115deg));  }
+.tick:nth-child(27) { @include transform(rotate(125deg));  }
+.tick:nth-child(28) { @include transform(rotate(135deg));  }

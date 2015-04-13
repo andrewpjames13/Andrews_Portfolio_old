@@ -34,8 +34,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
-    @imgs = Project.new
+    # @project = Project.find(params[:id])
+    # @imgs = Project.new
   end
 
   def destroy
