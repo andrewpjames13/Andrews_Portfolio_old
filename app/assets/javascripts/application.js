@@ -66,88 +66,7 @@ $(document).ready(function() {
     });
   });
 
-
-  // function abc() {
-  //   // Some code
-  //   var a =  $("#amount").val();
-  //   $(".knob").css({ 'transform':'rotate('+degree+'deg)' });
-  //
-  // }
-  // $(function() {
-  //    $("#slider").slider({
-  //      range: "min",
-  //      value: 100,
-  //      min: 0,
-  //      max: 225,
-  //      slide: function(event, ui) {
-  //        $("#amount").val(ui.value);
-  //        abc()
-  //        }
-  //      });
-  //    });
-
-  // var mouseStillDown = false;
-  // var degree = 10;
-  // $('.knob').mousedown(function(){
-  //   mouseXStart = Math.round (event.clientX);
-  //   mouseYStart = Math.round (event.clientY);
-  //   mouseStillDown = true;
-  //
-  //   if (mouseStillDown == true) {
-  //     $('.knob').mousemove(function(event){
-  //       mouseX = Math.round (event.clientX);
-  //       mouseY = Math.round (event.clientY);
-  //
-  //       // console.log(mouseXStart, mouseYStart);
-  //       // console.log(mouseX, mouseY);
-  //       // degree = (mouseX - mouseXStart) + (mouseY - mouseYStart);
-  //       console.log(degree);
-  //     });
-  //   }
-  //
-  //   $('.knob').css({ 'transform':'rotate('+degree+'deg)' });
-  //   console.log(mouseStillDown);
-  // });
-  //
-  //
-  // $('.knob').mouseup(function(){
-  //   mouseStillDown = false;
-  //   console.log(mouseStillDown);
-  //
-  // });
-
-  // var mouseStillDown = false;
-  // var RAD2DEG = 180 / Math.PI;
-  // var knob = $(".knob");
-  // var min = 0;
-  // var max = 270;
-  // knob.centerX = knob.offset().left + knob.width()/2;
-  // knob.centerY =  knob.offset().top + knob.height()/2;
-  //
-  // $('.knob').mousedown(function(e){
-  //   mouseStillDown = true;
-  //   offset = Math.atan2(knob.centerY - e.pageY, e.pageX - knob.centerX);
-  // });
-  //
-  // $('.knob').mouseup(function(){
-  //   mouseStillDown = false;
-  // });
-  //
-  // $('.knob').mousemove(function(e){
-  //   if (mouseStillDown) {
-  //     var mouseX = e.pageX;
-  //     var mouseY = e.pageY;
-  //     var radians = Math.atan2(mouseX, mouseY);
-  //     var newOffset = Math.atan2(knob.centerY - e.pageY, e.pageX - knob.centerX);
-  //
-  //     var degree = (offset - newOffset) * RAD2DEG;
-  //
-  //     $('.knob').css({ 'transform':'rotate('+degree+'deg)' });
-  //     console.log(degree);
-  //
-  //   }
-  // });
-
+  //Knob
   var mouseStillDown = false;
   var Rad2DdeG = 180 / Math.PI;
   var knob = $(".knob");
@@ -159,25 +78,18 @@ $(document).ready(function() {
   $('.knob').mousedown(function(e){
     mouseStillDown = true;
     offset = Math.atan2(knob.centerY - e.pageY, e.pageX - knob.centerX);
-  });
+    $('.knob').css({'transition':'all 0s ease-in-out' });
 
-  $('.knob').mouseup(function(){
-    mouseStillDown = false;
   });
 
   $('.knob').mousemove(function(e){
     if (mouseStillDown) {
       var mouseX = e.pageX;
       var mouseY = e.pageY;
-      var radians = Math.atan2(mouseX, mouseY);
       var newOffset = Math.atan2(knob.centerY - mouseY, mouseX - knob.centerX);
 
       var degree = (offset - newOffset) * Rad2DdeG;
       degree = (degree + 360) % 360;
-
-      if (degree < 0)  {
-        degree = 360 + degree
-      }
 
       if (degree < 0 || degree > 300) {
         degree = min
@@ -196,7 +108,19 @@ $(document).ready(function() {
     }
   });
 
+  $('.knob').mouseup(function(e){
+    mouseStillDown = false;
 
+    if (mouseStillDown == false) {
+      // for(i=0; i<300; i++) {
+      activeTicks = 1
+      // }
+      $('.knob').css({ 'transform':'rotate('+0+'deg)', 'transition':'all 1s ease-in-out' });
+      // $('.tick').removeClass('activetick');
+      $('.tick').removeClass('activetick').css({'transition':'all 60s ease-out'});
+      $('.tick').slice(0,activeTicks).addClass('activetick');
+    }
+  });
 
 });
 
