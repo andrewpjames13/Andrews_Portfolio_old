@@ -116,12 +116,12 @@ $(document).ready(function() {
       activeTicks = (Math.round(deg / 10));
 
       for(var tick=activeTicks, degreeCount = deg; tick > 0; tick--, degreeCount = degreeCount -10) {
-        var knob = function(tick, degreeCount) {
+        var knob = function(tick) {
           // $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all .2s ease-in-out' });
           $(tickArray[tick]).removeClass('activetick').css({'transition':'all .5s ease-in-out'});
         };
 
-        setTimeout(knob, Math.round(1000/activeTicks * (activeTicks - tick)), tick);
+        setTimeout(knob, Math.round(900/activeTicks * (activeTicks - tick)), tick);
 
       }
       $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all 1s ease-in-out' });
@@ -132,38 +132,3 @@ $(document).ready(function() {
   });
 
 });
-
-// var mouseStillDown = false;
-//
-// $(document).mousedown(function(event) {
-//     mouseStillDown = true;
-//     doSomething();
-// });
-//
-// function doSomething() {
-//     if (!mouseStillDown) { return; } // we could have come back from
-//                                      // SetInterval and the mouse is no longer down
-//     // do something
-//
-//     if (mouseStillDown) { setInterval("doSomething", 100); }
-// }
-//
-// $(document).mouseup(function(event) {
-//     mouseStillDown = false;
-// });
-
-
-
-// $('#menu-icon').css({cursor: "pointer"}).on('click', function() {
-//   // $('#menu-icon, header').fadeOut('fast')
-//   $('#menu-icon').each(function() {
-//       $('#sidebar').toggle("slide");
-//       $('.sidecontainer').animate({left:'+=35%'}, 400, function() {});
-//   });
-// });
-//
-// $('.side-nav-icon').on('click', function() {
-//   $('#menu-icon, header').fadeIn('fast')
-//   $('#sidebar').toggle("slide");
-//   $('.sidecontainer').animate({left:'-=35%'}, 400, function() {});
-// });
