@@ -129,35 +129,43 @@
   @include transition(all 300ms ease-in-out);
 }
 
-.tick:nth-child(1)  { @include transform(rotate(-135deg)); }
-.tick:nth-child(2)  { @include transform(rotate(-125deg)); }
-.tick:nth-child(3)  { @include transform(rotate(-115deg)); }
-.tick:nth-child(4)  { @include transform(rotate(-105deg)); }
-.tick:nth-child(5)  { @include transform(rotate(-95deg));  }
-.tick:nth-child(6)  { @include transform(rotate(-85deg));  }
-.tick:nth-child(7)  { @include transform(rotate(-75deg));  }
-.tick:nth-child(8)  { @include transform(rotate(-65deg));  }
-.tick:nth-child(9)  { @include transform(rotate(-55deg));  }
-.tick:nth-child(10) { @include transform(rotate(-45deg));  }
-.tick:nth-child(11) { @include transform(rotate(-35deg));  }
-.tick:nth-child(12) { @include transform(rotate(-25deg));  }
-.tick:nth-child(13) { @include transform(rotate(-15deg));  }
-.tick:nth-child(14) { @include transform(rotate(-5deg));   }
-.tick:nth-child(15) { @include transform(rotate(5deg));    }
-.tick:nth-child(16) { @include transform(rotate(15deg));   }
-.tick:nth-child(17) { @include transform(rotate(25deg));   }
-.tick:nth-child(18) { @include transform(rotate(35deg));   }
-.tick:nth-child(19) { @include transform(rotate(45deg));   }
-.tick:nth-child(20) { @include transform(rotate(55deg));   }
-.tick:nth-child(21) { @include transform(rotate(65deg));   }
-.tick:nth-child(22) { @include transform(rotate(75deg));   }
-.tick:nth-child(19) { @include transform(rotate(45deg));   }
-.tick:nth-child(20) { @include transform(rotate(55deg));   }
-.tick:nth-child(21) { @include transform(rotate(65deg));   }
-.tick:nth-child(22) { @include transform(rotate(75deg));   }
-.tick:nth-child(23) { @include transform(rotate(85deg));   }
-.tick:nth-child(24) { @include transform(rotate(95deg));   }
-.tick:nth-child(25) { @include transform(rotate(105deg));  }
-.tick:nth-child(26) { @include transform(rotate(115deg));  }
-.tick:nth-child(27) { @include transform(rotate(125deg));  }
-.tick:nth-child(28) { @include transform(rotate(135deg));  }
+$num: -135;
+@for $item from 1 through 28{
+  .tick:nth-child(#{$item}){
+    @include transform(rotate(#{$num}deg));
+    $num: $num + 10;
+  }
+}
+
+// .tick:nth-child(1)  { @include transform(rotate(-135deg)); }
+// .tick:nth-child(2)  { @include transform(rotate(-125deg)); }
+// .tick:nth-child(3)  { @include transform(rotate(-115deg)); }
+// .tick:nth-child(4)  { @include transform(rotate(-105deg)); }
+// .tick:nth-child(5)  { @include transform(rotate(-95deg));  }
+// .tick:nth-child(6)  { @include transform(rotate(-85deg));  }
+// .tick:nth-child(7)  { @include transform(rotate(-75deg));  }
+// .tick:nth-child(8)  { @include transform(rotate(-65deg));  }
+// .tick:nth-child(9)  { @include transform(rotate(-55deg));  }
+// .tick:nth-child(10) { @include transform(rotate(-45deg));  }
+// .tick:nth-child(11) { @include transform(rotate(-35deg));  }
+// .tick:nth-child(12) { @include transform(rotate(-25deg));  }
+// .tick:nth-child(13) { @include transform(rotate(-15deg));  }
+// .tick:nth-child(14) { @include transform(rotate(-5deg));   }
+// .tick:nth-child(15) { @include transform(rotate(5deg));    }
+// .tick:nth-child(16) { @include transform(rotate(15deg));   }
+// .tick:nth-child(17) { @include transform(rotate(25deg));   }
+// .tick:nth-child(18) { @include transform(rotate(35deg));   }
+// .tick:nth-child(19) { @include transform(rotate(45deg));   }
+// .tick:nth-child(20) { @include transform(rotate(55deg));   }
+// .tick:nth-child(21) { @include transform(rotate(65deg));   }
+// .tick:nth-child(22) { @include transform(rotate(75deg));   }
+// .tick:nth-child(19) { @include transform(rotate(45deg));   }
+// .tick:nth-child(20) { @include transform(rotate(55deg));   }
+// .tick:nth-child(21) { @include transform(rotate(65deg));   }
+// .tick:nth-child(22) { @include transform(rotate(75deg));   }
+// .tick:nth-child(23) { @include transform(rotate(85deg));   }
+// .tick:nth-child(24) { @include transform(rotate(95deg));   }
+// .tick:nth-child(25) { @include transform(rotate(105deg));  }
+// .tick:nth-child(26) { @include transform(rotate(115deg));  }
+// .tick:nth-child(27) { @include transform(rotate(125deg));  }
+// .tick:nth-child(28) { @include transform(rotate(135deg));  }

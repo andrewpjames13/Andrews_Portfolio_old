@@ -117,7 +117,6 @@ $(document).ready(function() {
 
       for(var tick=activeTicks, degreeCount = deg; tick > 0; tick--, degreeCount = degreeCount -10) {
         var knob = function(tick) {
-          // $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all .2s ease-in-out' });
           $(tickArray[tick]).removeClass('activetick').css({'transition':'all .5s ease-in-out'});
         };
 
