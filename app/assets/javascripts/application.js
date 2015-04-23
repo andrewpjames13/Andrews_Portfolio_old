@@ -124,7 +124,7 @@ $(document).ready(function() {
   //       setTimeout(knob, Math.round(900/activeTicks * (activeTicks - tick)), tick);
   //
   //     }
-  //     $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all 1s ease-in-out' });
+      // $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all 1s ease-in-out' });
   //
   //   }
   //   activeTicks = 1
@@ -132,14 +132,11 @@ $(document).ready(function() {
   // });
 
   //Detrignome
-  // var bpmInput = $("#ageInput");
-  // var bpmDisplay = $("#ageInput > div");
-  // var min = 0;
-  // var max = 225;
-  // var handle = null;
-  // var bpm =
-  // var speed = 60/bpm
 
+  //BPM Slider
+
+  //BPM Slider
+  bpm = 0;
   $(function() {
       $( "#slider-range-min" ).slider({
         range: "min",
@@ -148,9 +145,44 @@ $(document).ready(function() {
         max: 225,
         slide: function( event, ui ) {
           $( "#amount" ).val( ui.value );
+          $('input').trigger('change')
         }
       });
       $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
+
+      var time = function(bpm){return (60/bpm)*1000;};
+      var turnedOn = null;
+      var direction = "+";
+      var animation = function(speed, direction){
+          $("div[class^='eye']").animate({ "left": direction +"=10%" }, speed );
+        //   // $(".eye-right").animate({ "left": "+=100px" }, speed );
+        //   // $(".eye-right").animate({ "left": "-=100px" }, speed );
+        //   // $(".eye-left").animate({ "left": "+=50px" }, speed );
+        //   // $(".eye-left").animate({ "left": "-=50px" }, speed );
+        //   // $('div[class^="eye"]').addClass('movement').css({'transition':'margin'+ ' ' + speed +'s', 'margin-left':'100px'});
+        //   // $('.movement').css({'transition':'margin'+ ' ' + speed +'s', 'margin-left':'0px'});
+
+    };
+
+      $( "input[type='text']" ).change(function() {
+        var inputValue = $(this).val();
+        bpm = parseInt(inputValue);
+        var speed = time(bpm);
+        var firstTime = true;
+        window.clearInterval(turnedOn);
+        turnedOn = window.setInterval(function(){
+          animation(speed, direction)
+          firstTime = false;
+          if (direction == "+"){
+            direction = "-"
+          }else{
+            direction = "+"
+          }
+        },speed);
+        });
+
+
     });
+
 
 });

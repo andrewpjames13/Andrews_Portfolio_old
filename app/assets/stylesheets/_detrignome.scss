@@ -1,6 +1,21 @@
+@mixin transform($arguments) {
+  -webkit-transform: $arguments;
+  -moz-transform: $arguments;
+  -o-transform: $arguments;
+  -ms-transform: $arguments;
+  transform: $arguments;
+}
+
+@mixin transition($arguments) {
+  -webkit-transition: $arguments;
+  -moz-transition: $arguments;
+  -o-transition: $arguments;
+  transition: $arguments;
+}
+
 #slider-range-min{
   margin:100px;
-
+  width: 50%;
 }
 
 .detri-hero {
@@ -14,9 +29,53 @@
 
 .detri-bg {
   position: relative;
-  width: 92%;
+  width: 40%;
   height: 50em;
   padding: 20% 0 0 0;
   margin: 0 auto;
-  opacity:.5;
+  // opacity:.5;
+}
+
+.eye-big {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin-left: 0px;
+  @include transition(margin 0.0s);
+}
+
+.eye-left {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin-left: 0px;
+  @include transition(margin 0.0s);
+}
+.eye-right {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin-left: 0px;
+  @include transition(margin 0.0s);
+}
+
+.movement {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin-left: 0;
+  @include transition(margin 0.0s);
+
+}
+
+
+.on-btn {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
 }
