@@ -43,6 +43,7 @@
 
 
 $(document).ready(function() {
+  //navigation
   $('.welcome-page .header a, #sidebar a').on('click', function(e) {
     var scrollTo = $.attr(this, 'href').replace('/', '');
     e.preventDefault();
@@ -67,67 +68,89 @@ $(document).ready(function() {
   });
 
   //Knob
-  var mouseStillDown = false;
-  var Rad2DdeG = 180 / Math.PI;
-  var knob = $(".knob");
-  var min = 0;
-  var max = 270;
-  knob.centerX = knob.offset().left + knob.width()/2;
-  knob.centerY = knob.offset().top + knob.height()/2;
+  // var mouseStillDown = false;
+  // var Rad2DdeG = 180 / Math.PI;
+  // var knob = $(".knob");
+  // var min = 0;
+  // var max = 270;
+  // knob.centerX = knob.offset().left + knob.width()/2;
+  // knob.centerY = knob.offset().top + knob.height()/2;
+  //
+  // $('.knob').mousedown(function(e){
+  //   mouseStillDown = true;
+  //   offset = Math.atan2(knob.centerY - e.pageY, e.pageX - knob.centerX);
+  //   $('.knob').css({'transition':'all 0s ease-in-out' });
+  //
+  // });
+  //
+  // $('.knob').mousemove(function(e){
+  //   if (mouseStillDown) {
+  //     var mouseX = e.pageX;
+  //     var mouseY = e.pageY;
+  //     var newOffset = Math.atan2(knob.centerY - mouseY, mouseX - knob.centerX);
+  //
+  //     var degree = (offset - newOffset) * Rad2DdeG;
+  //     degree = (degree + 360) % 360;
+  //
+  //     if (degree < 0 || degree > 300) {
+  //       degree = min
+  //     }
+  //
+  //     if (degree > 270) {
+  //       degree = max
+  //     }
+  //
+  //     $('.knob').css({ 'transform':'rotate('+degree+'deg)' });
+  //     var activeTicks = (Math.round(degree / 10) + 1);
+  //     $('.tick').removeClass('activetick');
+  //     $('.tick').slice(0,activeTicks).addClass('activetick');
+  //
+  //     deg = degree
+  //   }
+  // });
+  //
+  // $('.knob').mouseup(function(e){
+  //   mouseStillDown = false;
+  //
+  //   if (mouseStillDown == false) {
+  //     tickArray = $('.ticks').children();
+  //     activeTicks = (Math.round(deg / 10));
+  //
+  //     for(var tick=activeTicks, degreeCount = deg; tick > 0; tick--, degreeCount = degreeCount -10) {
+  //       var knob = function(tick) {
+  //         $(tickArray[tick]).removeClass('activetick').css({'transition':'all .5s ease-in-out'});
+  //       };
+  //
+  //       setTimeout(knob, Math.round(900/activeTicks * (activeTicks - tick)), tick);
+  //
+  //     }
+  //     $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all 1s ease-in-out' });
+  //
+  //   }
+  //   activeTicks = 1
+  //
+  // });
 
-  $('.knob').mousedown(function(e){
-    mouseStillDown = true;
-    offset = Math.atan2(knob.centerY - e.pageY, e.pageX - knob.centerX);
-    $('.knob').css({'transition':'all 0s ease-in-out' });
+  //Detrignome
+  // var bpmInput = $("#ageInput");
+  // var bpmDisplay = $("#ageInput > div");
+  // var min = 0;
+  // var max = 225;
+  // var handle = null;
+  // var bpm =
+  // var speed = 60/bpm
 
-  });
-
-  $('.knob').mousemove(function(e){
-    if (mouseStillDown) {
-      var mouseX = e.pageX;
-      var mouseY = e.pageY;
-      var newOffset = Math.atan2(knob.centerY - mouseY, mouseX - knob.centerX);
-
-      var degree = (offset - newOffset) * Rad2DdeG;
-      degree = (degree + 360) % 360;
-
-      if (degree < 0 || degree > 300) {
-        degree = min
-      }
-
-      if (degree > 270) {
-        degree = max
-      }
-
-      $('.knob').css({ 'transform':'rotate('+degree+'deg)' });
-      var activeTicks = (Math.round(degree / 10) + 1);
-      $('.tick').removeClass('activetick');
-      $('.tick').slice(0,activeTicks).addClass('activetick');
-
-      deg = degree
-    }
-  });
-
-  $('.knob').mouseup(function(e){
-    mouseStillDown = false;
-
-    if (mouseStillDown == false) {
-      tickArray = $('.ticks').children();
-      activeTicks = (Math.round(deg / 10));
-
-      for(var tick=activeTicks, degreeCount = deg; tick > 0; tick--, degreeCount = degreeCount -10) {
-        var knob = function(tick) {
-          $(tickArray[tick]).removeClass('activetick').css({'transition':'all .5s ease-in-out'});
-        };
-
-        setTimeout(knob, Math.round(900/activeTicks * (activeTicks - tick)), tick);
-
-      }
-      $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all 1s ease-in-out' });
-
-    }
-    activeTicks = 1
-
-  });
+  $(function() {
+      $( "#slider-range-min" ).slider({
+        range: "min",
+        value: 90,
+        min: 1,
+        max: 225,
+        slide: function( event, ui ) {
+          $( "#amount" ).val( ui.value );
+        }
+      });
+      $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
+    });
 
 });

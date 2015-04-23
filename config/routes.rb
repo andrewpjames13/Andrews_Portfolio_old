@@ -7,6 +7,7 @@ Rails.application.routes.draw do
  resources :projects
 
  get '/knob' => 'projects#knob'
+ get '/detrignome' => 'projects#detrignome'
  get '/signup' => 'users#new'
  post '/signup' => 'users#create'
  get '/signin' => 'sessions#new'
