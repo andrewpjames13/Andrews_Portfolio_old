@@ -27,40 +27,59 @@
   background-color: #464646;
 }
 
-.detri-bg {
+.detri-container {
   position: relative;
-  width: 40%;
+  width: 400px;
   height: 50em;
-  padding: 20% 0 0 0;
+  padding: 10% 0 0 0;
   margin: 0 auto;
-  // opacity:.5;
+  // background-image: url(Detra-gnome-body.gif);
+}
+
+.detri-body{
+  position: absolute;
+  width:100%;
+  z-index:0;
+  // height: auto;
+  margin: 0 auto;
+
 }
 
 .eye-big {
   position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  margin-left: 0px;
+  width: 70px;
+  height: 70px;
+  margin: 65px auto 0 35%;
+  z-index: 3;
   @include transition(margin 0.0s);
 }
 
+.small-eyes{
+  position: relative;
+  width: 40%;
+  height: 100px;
+  margin: 85px auto 0 30%;
+  z-index: 3;
+}
+
 .eye-left {
-  position: relative;
+  position: absolute;
   width: 100px;
   height: 100px;
-  background-color: red;
   margin-left: 0px;
+  float: left;
+  z-index: 3;
   @include transition(margin 0.0s);
 }
-.eye-right {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  margin-left: 0px;
-  @include transition(margin 0.0s);
-}
+// .eye-right {
+//   position: absolute;
+//   width: 100px;
+//   height: 100px;
+//   background-color: red;
+//   margin-left: 0px;
+//   z-index: 3;
+//   @include transition(margin 0.0s);
+// }
 
 .movement {
   position: relative;

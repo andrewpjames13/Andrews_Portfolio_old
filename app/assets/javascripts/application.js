@@ -124,7 +124,7 @@ $(document).ready(function() {
   //       setTimeout(knob, Math.round(900/activeTicks * (activeTicks - tick)), tick);
   //
   //     }
-      // $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all 1s ease-in-out' });
+  //     $('.knob').css({ 'transform':'rotate('+ degreeCount + 'deg)', 'transition':'all 1s ease-in-out' });
   //
   //   }
   //   activeTicks = 1
@@ -154,15 +154,8 @@ $(document).ready(function() {
       var turnedOn = null;
       var direction = "+";
       var animation = function(speed, direction){
-          $("div[class^='eye']").animate({ "left": direction +"=10%" }, speed );
-        //   // $(".eye-right").animate({ "left": "+=100px" }, speed );
-        //   // $(".eye-right").animate({ "left": "-=100px" }, speed );
-        //   // $(".eye-left").animate({ "left": "+=50px" }, speed );
-        //   // $(".eye-left").animate({ "left": "-=50px" }, speed );
-        //   // $('div[class^="eye"]').addClass('movement').css({'transition':'margin'+ ' ' + speed +'s', 'margin-left':'100px'});
-        //   // $('.movement').css({'transition':'margin'+ ' ' + speed +'s', 'margin-left':'0px'});
-
-    };
+          $("div[class^='eye']").animate({ "left": direction +"=17%" }, speed );
+          };
 
       $( "input[type='text']" ).change(function() {
         var inputValue = $(this).val();
@@ -172,7 +165,6 @@ $(document).ready(function() {
         window.clearInterval(turnedOn);
         turnedOn = window.setInterval(function(){
           animation(speed, direction)
-          firstTime = false;
           if (direction == "+"){
             direction = "-"
           }else{
