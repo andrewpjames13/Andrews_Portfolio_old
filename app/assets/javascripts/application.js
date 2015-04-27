@@ -53,7 +53,7 @@ $(document).ready(function() {
   var count = 0;
   $('#menu-icon').css({cursor: "pointer"}).on('click', function() {
     $('#menu-icon').each(function() {
-      if (count == 0) {
+      if (count === 0) {
         $('header').toggleClass("headerfade");
         $('#sidebar').toggle("slide");
         $('.sidecontainer').animate({left:'+=35%'}, 400, function() {});
@@ -146,17 +146,18 @@ $(document).ready(function() {
       max: 225,
       slide: function( event, ui ) {
         $( "#amount" ).val( ui.value );
-        $('input').trigger('change')
+        $('input').trigger('change');
       }
     });
     $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
-
     var time = function(bpm){return (60/bpm)*1000;};
     var turnedOn = null;
     var direction = "+";
     var animation = function(speed, direction){
       $("div[class^='eye']").animate({ "left": direction +"=17%", easing: 'easeInOutQuart' }, speed );
+      // $('.needle').css({ 'transform':'rotate('+direction+'50deg)', 'transition':'all 'speed''+'s ease-in-out' });
     };
+
     // $('.on-btn').css({cursor: "pointer"}).on('click', function() {
     //   var counter = 0;
     //   if (counter === 0){
@@ -182,11 +183,11 @@ $(document).ready(function() {
           var firstTime = true;
           window.clearInterval(turnedOn);
           turnedOn = window.setInterval(function(){
-            animation(speed, direction)
+            animation(speed, direction);
             if (direction == "+"){
-              direction = "-"
+              direction = "-";
             }else{
-              direction = "+"
+              direction = "+";
             }
           },speed);
         });
