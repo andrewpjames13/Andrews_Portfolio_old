@@ -136,45 +136,64 @@ $(document).ready(function() {
   //BPM Slider
 
   //BPM Slider
+
   bpm = 0;
   $(function() {
-      $( "#slider-range-min" ).slider({
-        range: "min",
-        value: 90,
-        min: 1,
-        max: 225,
-        slide: function( event, ui ) {
-          $( "#amount" ).val( ui.value );
-          $('input').trigger('change')
-        }
-      });
-      $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
+    $( "#slider-range-min" ).slider({
+      range: "min",
+      value: 90,
+      min: 1,
+      max: 225,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+        $('input').trigger('change')
+      }
+    });
+    $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
 
-      var time = function(bpm){return (60/bpm)*1000;};
-      var turnedOn = null;
-      var direction = "+";
-      var animation = function(speed, direction){
-          $("div[class^='eye']").animate({ "left": direction +"=17%" }, speed );
-          };
-
-      $( "input[type='text']" ).change(function() {
-        var inputValue = $(this).val();
-        bpm = parseInt(inputValue);
-        var speed = time(bpm);
-        var firstTime = true;
-        window.clearInterval(turnedOn);
-        turnedOn = window.setInterval(function(){
-          animation(speed, direction)
-          if (direction == "+"){
-            direction = "-"
-          }else{
-            direction = "+"
-          }
-        },speed);
+    var time = function(bpm){return (60/bpm)*1000;};
+    var turnedOn = null;
+    var direction = "+";
+    var animation = function(speed, direction){
+      $("div[class^='eye']").animate({ "left": direction +"=17%", easing: 'easeInOutQuart' }, speed );
+    };
+    // $('.on-btn').css({cursor: "pointer"}).on('click', function() {
+    //   var counter = 0;
+    //   if (counter === 0){
+    //     counter = 1;
+    //     var inputValue = $( "#amount" ).val();
+    //     bpm = parseInt(inputValue);
+    //     var speed = time(bpm);
+    //     var firstTime = true;
+    //     window.clearInterval(turnedOn);
+    //     turnedOn = window.setInterval(function(){
+    //       animation(speed, direction)
+    //       if (direction == "+"){
+    //         direction = "-"
+    //       }else{
+    //         direction = "+"
+    //       }
+    //     },speed);
+    //   }else if(count == 1) {
+        $( "input[type='text']" ).change(function() {
+          var inputValue = $(this).val();
+          bpm = parseInt(inputValue);
+          var speed = time(bpm);
+          var firstTime = true;
+          window.clearInterval(turnedOn);
+          turnedOn = window.setInterval(function(){
+            animation(speed, direction)
+            if (direction == "+"){
+              direction = "-"
+            }else{
+              direction = "+"
+            }
+          },speed);
         });
-
+      // }
 
     });
 
+  // });
 
 });

@@ -14,8 +14,24 @@
 }
 
 #slider-range-min{
-  margin:100px;
-  width: 50%;
+  margin:190px 0 0 270px;
+  width: 100px;
+  border-radius: 10px;
+  border-color: $yellow;
+  background-color: #2b1423;
+}
+.ui-widget-content{
+  background: none;
+}
+.ui-widget-header{
+  background: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+  background: #2b1423;
+  border-color: $yellow;
+
+  border-radius: 50%;
 }
 
 .detri-hero {
@@ -33,7 +49,6 @@
   height: 50em;
   padding: 10% 0 0 0;
   margin: 0 auto;
-  // background-image: url(Detra-gnome-body.gif);
 }
 
 .detri-body{
@@ -71,15 +86,6 @@
   z-index: 3;
   @include transition(margin 0.0s);
 }
-// .eye-right {
-//   position: absolute;
-//   width: 100px;
-//   height: 100px;
-//   background-color: red;
-//   margin-left: 0px;
-//   z-index: 3;
-//   @include transition(margin 0.0s);
-// }
 
 .movement {
   position: relative;
@@ -91,10 +97,54 @@
 
 }
 
-
 .on-btn {
   position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: red;
+  float:left;
+  width: 47px;
+  height: 45px;
+  margin: 165px 0 0 25px;
+  padding: 14px 0 0 13px;
+  font-size: .9em;
+  color: $yellow;
+  background-image: url("Detra-gnome-button.png");
+}
+
+.sig-btn {
+  position: relative;
+  float:left;
+  width: 80px;
+  height: 80px;
+  z-index:2;
+  margin: 105px 0 0 -20px;
+  padding: 26px 0 0 20px;
+  font-size: 1.5em;
+  color: $yellow;
+  background-image: url("Detra-gnome-screen.png");
+}
+
+.bpm-btn {
+  position: relative;
+  float:left;
+  width: 80px;
+  height: 80px;
+  z-index:2;
+  margin: 105px 0 0 0px;
+  padding: 26px 0 0 20px;
+  font-size: 1.5em;
+  color: $yellow;
+  background-image: url("Detra-gnome-screen.png");
+}
+
+// #amount {
+//   background-color: none;
+// }
+.needle-btn {
+  position: relative;
+  float:left;
+  width: 136px;
+  height: 151px;
+  z-index:2;
+  margin: 90px 0 0 0px;
+  padding: 26px 0 0 20px;
+  background-image: url("Detra-gnome-back-needle.png");
 }
