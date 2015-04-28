@@ -143,6 +143,10 @@ input {
     width:80px;
 }
 
+input:focus, span:focus {
+    outline-width: 0;
+}
+
 .needle-btn {
   position: relative;
   float:left;
