@@ -154,28 +154,10 @@ $(document).ready(function() {
     var turnedOn = null;
     var direction = "+";
     var animation = function(speed, direction){
-      $("div[class^='eye']").animate({ "left": direction +"=17%", easing: 'easeInOutQuart' }, speed );
-      // $('.needle').css({ 'transform':'rotate('+direction+'50deg)', 'transition':'all 'speed''+'s ease-in-out' });
+      $("div[class^='eye']").animate({ "left": direction +"=17%", easing: 'ease-in-out' }, speed );
+      $('.needle-con').css({ 'transform':'rotate('+direction+'50deg)', 'transition':'all ' +speed+'ms ease-in-out'});
     };
 
-    // $('.on-btn').css({cursor: "pointer"}).on('click', function() {
-    //   var counter = 0;
-    //   if (counter === 0){
-    //     counter = 1;
-    //     var inputValue = $( "#amount" ).val();
-    //     bpm = parseInt(inputValue);
-    //     var speed = time(bpm);
-    //     var firstTime = true;
-    //     window.clearInterval(turnedOn);
-    //     turnedOn = window.setInterval(function(){
-    //       animation(speed, direction)
-    //       if (direction == "+"){
-    //         direction = "-"
-    //       }else{
-    //         direction = "+"
-    //       }
-    //     },speed);
-    //   }else if(count == 1) {
         $( "input[type='text']" ).change(function() {
           var inputValue = $(this).val();
           bpm = parseInt(inputValue);
@@ -191,10 +173,9 @@ $(document).ready(function() {
             }
           },speed);
         });
-      // }
+
 
     });
 
-  // });
 
 });

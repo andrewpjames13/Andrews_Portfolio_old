@@ -150,22 +150,34 @@ input {
   height: 151px;
   z-index:2;
   margin: 90px 0 -20px 0;
-  padding: 0 0 -20px 0;
+  // padding: 0 0 -20px 0;
   background-image: url("Detra-gnome-back-needle.png");
+  // @include transform(rotate(0deg));
+  // @include transition(all 0.0s ease-in-out);
+}
+
+.needle-con{
+  position: relative;
+  float:left;
+  width: 136px;
+  height: 151px;
+  z-index:2;
+  margin: 0 0 -20px 0;
+  padding: 0 0 -20px 0;
 }
 
 .needle {
   content: "";
   position: absolute;
-  bottom: 45px;
-  left: 20px;
+  bottom: 60px;
+  left: 60px;
   width: 0;
   height: 0;
-  border-radius:50px;
-  border-bottom: 120px solid $orange;
+  border-radius:55px;
+  border-bottom: 110px solid $orange;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  @include transform(rotate(-50deg));
+  @include transform(rotate(0deg));
   transition: all 0s ease-in-out;
 }
 
