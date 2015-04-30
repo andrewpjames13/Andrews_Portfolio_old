@@ -155,7 +155,9 @@ $(document).ready(function() {
     var direction = "+";
     var animation = function(speed, direction){
       $("div[class^='eye']").animate({ "left": direction +"=17%", easing: 'ease-in-out' }, speed );
-      $('.needle-con').css({ 'transform':'rotate('+direction+'50deg)', 'transition':'all ' +speed+'ms ease-in-out'});
+      // $('.needle-con').css({ 'transform':'rotate('+direction+'35deg)', 'transition':'all ' +(speed-89)+'ms ease-in-out'});
+      $('.needle-con').toggleClass( "needle-con2", speed, 'ease-in-out');
+      // $('.needle-con').css({'transition':'all' + speed + 'ease-in-out'});
     };
 
         $( "input[type='text']" ).change(function() {
