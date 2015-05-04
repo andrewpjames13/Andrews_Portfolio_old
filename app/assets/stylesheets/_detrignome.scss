@@ -169,7 +169,7 @@ input:focus, span:focus {
   z-index:2;
   margin: 0 0 -20px 0;
   padding: 0 0 -20px 0;
-  @include transform(rotate(-35deg));
+  // @include transform(rotate(-35deg));
   // @include transition(all 0ms ease-in-out);
 
 }
@@ -182,7 +182,7 @@ input:focus, span:focus {
   z-index:2;
   margin: 0 0 -20px 0;
   padding: 0 0 -20px 0;
-  @include transform(rotate(35deg));
+  // @include transform(rotate(35deg));
   @include transition(all 0ms ease-in-out);
 
 }

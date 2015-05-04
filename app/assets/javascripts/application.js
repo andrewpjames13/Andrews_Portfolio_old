@@ -135,10 +135,9 @@ $(document).ready(function() {
 
   //BPM Slider
 
-  //BPM Slider
-
   bpm = 0;
   $(function() {
+
     $( "#slider-range-min" ).slider({
       range: "min",
       value: 90,
@@ -149,15 +148,19 @@ $(document).ready(function() {
         $('input').trigger('change');
       }
     });
+
+    // $('.on-btn').on('click', function(){
+
     $( "#amount" ).val( $( "#slider-range-min" ).slider( "value" ) );
     var time = function(bpm){return (60/bpm)*1000;};
     var turnedOn = null;
     var direction = "+";
     var animation = function(speed, direction){
-      $("div[class^='eye']").animate({ "left": direction +"=17%", easing: 'ease-in-out' }, speed );
-      // $('.needle-con').css({ 'transform':'rotate('+direction+'35deg)', 'transition':'all ' +(speed-89)+'ms ease-in-out'});
-      $('.needle-con').toggleClass( "needle-con2", speed, 'ease-in-out');
-      // $('.needle-con').css({'transition':'all' + speed + 'ease-in-out'});
+      // $("div[class^='eye']").animate({ "left": direction +"=17%", easing: 'easeInOutQuad' }, speed );
+      $('.needle-con').css({ 'transform':'rotate('+direction+'20deg)', 'transition':'all ' +(speed)+'ms ease-in-out'});
+      $(".eye-left").css({"margin-left": direction+"=27%", 'transition':'all ' +(speed)+'ms ease-in-out'});
+      $(".eye-big").css({"margin-left": direction+"=65%", 'transition':'all ' +(speed)+'ms ease-in-out'});
+
     };
 
         $( "input[type='text']" ).change(function() {
@@ -176,6 +179,7 @@ $(document).ready(function() {
           },speed);
         });
 
+      // });
 
     });
 
