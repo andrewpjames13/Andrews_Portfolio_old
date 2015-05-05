@@ -13,11 +13,11 @@ body {
   color: $gray;
 }
 
-p {
-  margin-bottom: 1.3em;
-  margin-top: 1.3em;
-
-}
+// p {
+//   margin-bottom: 1.3em;
+//   margin-top: 1.3em;
+//
+// }
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
@@ -67,4 +67,7 @@ small, .font_small {font-size: 0.707em;}
   line-height: 1.6em;
   font-size: 1.2em;
   color: $green;
+  margin: 20px 0 100px 0;
+    // margin-bottom: 1.3em;
+    // margin-top: 1.3em;
 }

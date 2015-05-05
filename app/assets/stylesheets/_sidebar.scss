@@ -73,7 +73,7 @@
       text-align: left;
       text-decoration: none;
       display: block;
-      border-bottom: 1px solid #C9223D;
+      border-bottom: 1px solid $darkgreen;
       -webkit-transition:  background 0.3s ease-in-out;
       -moz-transition:  background 0.3s ease-in-out;
       -ms-transition:  background 0.3s ease-in-out;
@@ -81,6 +81,6 @@
       transition:  background 0.3s ease-in-out;
   }
   #sidebar ul li:hover a {
-      background: #C9223D;
+      background: $darkgreen;
   }
 }
