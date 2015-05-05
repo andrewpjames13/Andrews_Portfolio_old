@@ -13,7 +13,7 @@
 @import "detrignome";
 
 .hlogo{
-  margin: 0 auto;
+  margin: 20px auto 20px auto;
   display: block;
 }
 
@@ -29,4 +29,9 @@
   background: #05dba7;
   width: 100%;
   padding: 15% 0 15% 0;
+}
+
+.hero-holder{
+  width: 400px;
+  margin: 0 auto;
 }
