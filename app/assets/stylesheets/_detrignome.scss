@@ -216,3 +216,22 @@ input:focus, span:focus {
   border-radius: 50%;
   background-color: #2b1423;
 }
+
+select{
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-radius: 50%;
+  // border-image-source: initial;
+  // border-image-slice: initial;
+  // border-image-width: initial;
+  // border-image-outset: initial;
+  // border-image-repeat: initial;
+}
+
+select:focus {
+    outline-width: 0;
+}
+
+.custom-dropdown--white::after {
+     color: rgba(0,0,0,.9);
+ }

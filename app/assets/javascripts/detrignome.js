@@ -5,22 +5,66 @@ var animation = function(speed, direction){
   $('.needle-con').css({ 'transform':'rotate('+direction+'20deg)', 'transition':'all ' +(speed)+'ms ease-in-out'});
   $(".eye-left").css({"margin-left": direction+"=27%", 'transition':'all ' +(speed)+'ms ease-in-out'});
   $(".eye-big").css({"margin-left": direction+"=65%", 'transition':'all ' +(speed)+'ms ease-in-out'});
-  var bass = new Audio("assets/kick_01.mp3");
-  var pipe = new Audio("assets/metal_pipe.mp3");
-  if(sig === 0){
-    pipe.play();
-    sig++;
-  }else if(sig == 3){
-    bass.play();
-    sig = 0;
-  }else{
-    bass.play();
-    sig++;
-  }
+
+  signature();
 };
 
 var time = function(bpm){
   return (60/bpm)*1000;
+};
+
+var signature = function(){
+  var bass = new Audio("assets/kick_01.mp3");
+  var pipe = new Audio("assets/metal_pipe.mp3");
+  var sigVal = $('.sig-btn option:selected').text();
+
+  var fourFour = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 3){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  var threeFour = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 2){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  var twoFour = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 1){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  if(sigVal == "4/4"){
+    return fourFour();
+  }else if (sigVal == "3/4"){
+    return threeFour();
+  }else{
+    return twoFour();
+  }
+
 };
 
 var slider = function(){
