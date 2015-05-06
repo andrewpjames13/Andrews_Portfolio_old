@@ -1,11 +1,22 @@
 var metronome = (function(){
+  var sig = 0;
 
 var animation = function(speed, direction){
   $('.needle-con').css({ 'transform':'rotate('+direction+'20deg)', 'transition':'all ' +(speed)+'ms ease-in-out'});
   $(".eye-left").css({"margin-left": direction+"=27%", 'transition':'all ' +(speed)+'ms ease-in-out'});
   $(".eye-big").css({"margin-left": direction+"=65%", 'transition':'all ' +(speed)+'ms ease-in-out'});
   var bass = new Audio("assets/kick_01.mp3");
-  bass.play();
+  var pipe = new Audio("assets/metal_pipe.mp3");
+  if(sig === 0){
+    pipe.play();
+    sig++;
+  }else if(sig == 3){
+    bass.play();
+    sig = 0;
+  }else{
+    bass.play();
+    sig++;
+  }
 };
 
 var time = function(bpm){
@@ -51,6 +62,7 @@ var bpmDelay = function(){
 var init = function(){
   slider();
   $('.on-btn').on('click', function(){
+    // $('input').trigger('change');
     bpmDelay();
   });
 };
