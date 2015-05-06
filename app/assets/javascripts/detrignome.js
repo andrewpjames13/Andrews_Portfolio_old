@@ -4,7 +4,7 @@ var animation = function(speed, direction){
   $('.needle-con').css({ 'transform':'rotate('+direction+'20deg)', 'transition':'all ' +(speed)+'ms ease-in-out'});
   $(".eye-left").css({"margin-left": direction+"=27%", 'transition':'all ' +(speed)+'ms ease-in-out'});
   $(".eye-big").css({"margin-left": direction+"=65%", 'transition':'all ' +(speed)+'ms ease-in-out'});
-  var bass = $("audio")[0];
+  var bass = new Audio("assets/kick_01.mp3");
   bass.play();
 };
 

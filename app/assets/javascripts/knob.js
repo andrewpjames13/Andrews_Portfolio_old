@@ -6,6 +6,7 @@ var knob = (function(){
   var knob = $(".knob");
   var min = 0;
   var max = 270;
+  var deg;
   knob.centerX = knob.offset().left + knob.width()/2;
   knob.centerY = knob.offset().top + knob.height()/2;
 
