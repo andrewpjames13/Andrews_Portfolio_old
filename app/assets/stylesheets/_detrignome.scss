@@ -116,8 +116,8 @@
   height: 80px;
   z-index:2;
   margin: 100px 0 0 -20px;
-  padding: 26px 0 0 20px;
-  font-size: 1.5em;
+  padding: 28px 0 0 23px;
+  // font-size: 1.5em;
   color: $yellow;
   background-image: url("Detra-gnome-screen.png");
 }
@@ -220,18 +220,19 @@ input:focus, span:focus {
 select{
   background-color: rgba(0,0,0,0);
   border: none;
-  border-radius: 50%;
-  // border-image-source: initial;
-  // border-image-slice: initial;
-  // border-image-width: initial;
-  // border-image-outset: initial;
-  // border-image-repeat: initial;
+  font-size: 1.4em;
+  color: $yellow;
+  -webkit-appearance: none;
+  background: url(GitHub_icon.png) no-repeat right;
+
+
 }
 
 select:focus {
     outline-width: 0;
 }
+option{
+  // margin: 0 0 0 30px;
+  // padding: 0 0 0 30px;
 
-.custom-dropdown--white::after {
-     color: rgba(0,0,0,.9);
- }
+}

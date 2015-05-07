@@ -57,14 +57,101 @@ var signature = function(){
     }
   };
 
-  if(sigVal == "4/4"){
+  var fiveFour = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 4){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  var sixFour = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 5){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  var sevenFour = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 6){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  var fiveEight = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 4){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  var sixEight = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 5){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  var sevenEight = function(){
+    if(sig === 0){
+      sig++;
+      return pipe.play();
+    }else if(sig == 6){
+      sig = 0;
+      return bass.play();
+    }else{
+      sig++;
+      return bass.play();
+    }
+  };
+
+  if (sigVal == "4/4"){
     return fourFour();
   }else if (sigVal == "3/4"){
     return threeFour();
-  }else{
+  }else if (sigVal == "2/4"){
     return twoFour();
+  } else if (sigVal == "5/4"){
+    return fiveFour();
+  } else if(sigVal == '7/4'){
+    return sevenFour();
+  } else if (sigVal == '5/8'){
+    return fiveEight();
+  } else if (sigVal == '6/8'){
+    return sixEight();
+  } else {
+    return sevenEight();
   }
-
 };
 
 var slider = function(){
@@ -90,6 +177,10 @@ var bpmDelay = function(){
     var inputValue = $(this).val();
     bpm = parseInt(inputValue);
     var speed = time(bpm);
+    var sigVal = $('.sig-btn option:selected').text();
+    if (sigVal == '5/8' || sigVal == '6/8' || sigVal == '7/8'){
+      speed = speed/2;
+    }
 
     window.clearInterval(turnedOn);
     turnedOn = window.setInterval(function(){
