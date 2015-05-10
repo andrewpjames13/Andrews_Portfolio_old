@@ -157,8 +157,8 @@ var signature = function(){
 var slider = function(){
   $( "#slider-range-min" ).slider({
     range: "min",
-    value: 90,
-    min: 1,
+    value: 0,
+    min: 0,
     max: 225,
     slide: function( event, ui ) {
       $( "#amount" ).val( ui.value );
@@ -178,7 +178,7 @@ var bpmDelay = function(){
     bpm = parseInt(inputValue);
     var speed = time(bpm);
     var sigVal = $('.sig-btn option:selected').text();
-    if (sigVal == '5/8' || sigVal == '6/8' || sigVal == '7/8'){
+    if (sigVal == '5/8' || sigVal == '6/8'|| sigVal == '7/8'){
       speed = speed/2;
     }
 
@@ -196,10 +196,7 @@ var bpmDelay = function(){
 
 var init = function(){
   slider();
-  $('.on-btn').on('click', function(){
-    // $('input').trigger('change');
-    bpmDelay();
-  });
+  bpmDelay();
 };
 
   return{
