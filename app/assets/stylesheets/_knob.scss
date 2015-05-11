@@ -23,21 +23,20 @@
 }
 
 .knob-back{
-  // position: relative;
+  position: fixed;
   background-image: url("knob-back.jpg");
   background-repeat: no-repeat;
-  width:100%;
+  width:1440px;
   height: auto;
-  // margin: 0 auto;
-  // display: block;
-  // z-index:-1;
+  margin: 0 auto;
+
 }
 
 .knob-hero {
   background-image: url("dark-tweed.jpg");
   margin: 0 auto;
   width: 100%;
-  height: 50%;
+  height: 900px;
   padding: 0 0 0 0;
   display:block;
   @include box-shadow(0 0 .4em 0 $darkgray);
@@ -48,7 +47,7 @@
   position: relative;
   background-image: url("dark-tweed-bg.jpg");
   background-repeat: no-repeat;
-  width: 92%;
+  width: 100%;
   height: 50em;
   padding: 20% 0 0 0;
   margin: 0 auto;
@@ -137,35 +136,16 @@ $num: -135;
   }
 }
 
-// .tick:nth-child(1)  { @include transform(rotate(-135deg)); }
-// .tick:nth-child(2)  { @include transform(rotate(-125deg)); }
-// .tick:nth-child(3)  { @include transform(rotate(-115deg)); }
-// .tick:nth-child(4)  { @include transform(rotate(-105deg)); }
-// .tick:nth-child(5)  { @include transform(rotate(-95deg));  }
-// .tick:nth-child(6)  { @include transform(rotate(-85deg));  }
-// .tick:nth-child(7)  { @include transform(rotate(-75deg));  }
-// .tick:nth-child(8)  { @include transform(rotate(-65deg));  }
-// .tick:nth-child(9)  { @include transform(rotate(-55deg));  }
-// .tick:nth-child(10) { @include transform(rotate(-45deg));  }
-// .tick:nth-child(11) { @include transform(rotate(-35deg));  }
-// .tick:nth-child(12) { @include transform(rotate(-25deg));  }
-// .tick:nth-child(13) { @include transform(rotate(-15deg));  }
-// .tick:nth-child(14) { @include transform(rotate(-5deg));   }
-// .tick:nth-child(15) { @include transform(rotate(5deg));    }
-// .tick:nth-child(16) { @include transform(rotate(15deg));   }
-// .tick:nth-child(17) { @include transform(rotate(25deg));   }
-// .tick:nth-child(18) { @include transform(rotate(35deg));   }
-// .tick:nth-child(19) { @include transform(rotate(45deg));   }
-// .tick:nth-child(20) { @include transform(rotate(55deg));   }
-// .tick:nth-child(21) { @include transform(rotate(65deg));   }
-// .tick:nth-child(22) { @include transform(rotate(75deg));   }
-// .tick:nth-child(19) { @include transform(rotate(45deg));   }
-// .tick:nth-child(20) { @include transform(rotate(55deg));   }
-// .tick:nth-child(21) { @include transform(rotate(65deg));   }
-// .tick:nth-child(22) { @include transform(rotate(75deg));   }
-// .tick:nth-child(23) { @include transform(rotate(85deg));   }
-// .tick:nth-child(24) { @include transform(rotate(95deg));   }
-// .tick:nth-child(25) { @include transform(rotate(105deg));  }
-// .tick:nth-child(26) { @include transform(rotate(115deg));  }
-// .tick:nth-child(27) { @include transform(rotate(125deg));  }
-// .tick:nth-child(28) { @include transform(rotate(135deg));  }
+@media screen and (max-width: 700px) {
+
+  .knob-back{
+    overflow: hidden;
+    padding: 50% 0 0 0;
+
+  }
+
+  .knob-hero {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
