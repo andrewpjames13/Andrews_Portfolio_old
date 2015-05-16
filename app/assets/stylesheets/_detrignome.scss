@@ -103,7 +103,7 @@
   width: 47px;
   height: 45px;
   margin: 165px 0 0 25px;
-  padding: 14px 0 0 13px;
+  padding: 12px 0 0 13px;
   font-size: .9em;
   color: $yellow;
   background-image: url("Detra-gnome-button.png");
@@ -129,7 +129,7 @@
   height: 80px;
   z-index:2;
   margin: 100px 0 0 0px;
-  padding: 26px 0 0 0;
+  padding: 20px 0 0 0;
   font-size: 1.5em;
   color: $yellow;
   background-image: url("Detra-gnome-screen.png");
@@ -155,7 +155,7 @@ input:focus, span:focus {
   height: 151px;
   z-index:2;
   margin: 90px 0 -20px 0;
-  // padding: 0 0 -20px 0;
+  padding: 0 0 -20px 0;
   background-image: url("Detra-gnome-back-needle.png");
   // @include transform(rotate(0deg));
   // @include transition(all 0.0s ease-in-out);

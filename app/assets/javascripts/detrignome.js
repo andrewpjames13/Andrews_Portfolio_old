@@ -135,30 +135,31 @@ var signature = function(){
     }
   };
 
-  if (sigVal == "4/4"){
-    return fourFour();
-  }else if (sigVal == "3/4"){
-    return threeFour();
-  }else if (sigVal == "2/4"){
-    return twoFour();
-  } else if (sigVal == "5/4"){
-    return fiveFour();
-  } else if(sigVal == '7/4'){
-    return sevenFour();
-  } else if (sigVal == '5/8'){
-    return fiveEight();
-  } else if (sigVal == '6/8'){
-    return sixEight();
-  } else {
-    return sevenEight();
-  }
+    if (sigVal == "4/4"){
+      return fourFour();
+    }else if (sigVal == "3/4"){
+      return threeFour();
+    }else if (sigVal == "2/4"){
+      return twoFour();
+    } else if (sigVal == "5/4"){
+      return fiveFour();
+    } else if(sigVal == '7/4'){
+      return sevenFour();
+    } else if (sigVal == '5/8'){
+      return fiveEight();
+    } else if (sigVal == '6/8'){
+      return sixEight();
+    } else {
+      return sevenEight();
+    }
+
 };
 
 var slider = function(){
   $( "#slider-range-min" ).slider({
     range: "min",
-    value: 0,
-    min: 0,
+    value: 1,
+    min: 1,
     max: 225,
     slide: function( event, ui ) {
       $( "#amount" ).val( ui.value );
