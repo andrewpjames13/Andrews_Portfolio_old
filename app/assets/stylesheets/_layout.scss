@@ -264,6 +264,8 @@ box-shadow: inset 1px 0px 16px 0px rgba(0,0,0,0.75);
   margin: 20px 0 20px 0;
 }
 
+
+
 [class*='col-'] {
   // float: none;
   // padding-right: 20px;
@@ -272,7 +274,7 @@ box-shadow: inset 1px 0px 16px 0px rgba(0,0,0,0.75);
   }
 
   .project-logo{
-    display:inline;
+    display:none;
   }
 }
 
