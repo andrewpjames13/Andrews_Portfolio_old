@@ -158,7 +158,6 @@ figure img {
 
 .dark-bg {
   background: $darkgray;
-
   overflow: hidden;
   width: 100%;
   margin: 0 0 0 0;
@@ -224,6 +223,10 @@ box-shadow: inset 1px 0px 16px 0px rgba(0,0,0,0.75);
 .project-p{
   width: 100%;
   margin: 20px 0 10px 0;
+}
+
+.link-space{
+  margin-right: 15px;
 }
 
 @media screen and (max-width: 1050px) {
