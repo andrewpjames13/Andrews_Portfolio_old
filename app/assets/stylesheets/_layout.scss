@@ -60,6 +60,7 @@
 
 .col-8-12 {
   width: 66.6%;
+  margin: 0 0 15px 0;
 }
 
 .col-12-12 {
@@ -222,7 +223,7 @@ box-shadow: inset 1px 0px 16px 0px rgba(0,0,0,0.75);
 }
 .project-p{
   width: 100%;
-  margin: 20px 0 15px 0;
+  margin: 20px 0 10px 0;
 }
 
 @media screen and (max-width: 1050px) {
@@ -232,11 +233,17 @@ box-shadow: inset 1px 0px 16px 0px rgba(0,0,0,0.75);
   }
 }
 
+
 @media screen and (max-width: 700px) {
 
 .resp {
   float: left;
   width: 25%;
+}
+
+.resp-100 {
+  float: left;
+  width: 100%;
 }
 
 [class*='col-'] {
