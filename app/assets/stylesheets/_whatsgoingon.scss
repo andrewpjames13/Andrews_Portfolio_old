@@ -1,6 +1,9 @@
 .wgo-hero{
-  background-image: url(black-leather-2.jpg);
-  background-repeat: repeat;
+  background-image: url(wgo-hero.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-size: cover;
   background-color: #464646;
 }
 

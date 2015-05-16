@@ -15,33 +15,6 @@
 //= require jquery-ui
 //= require_tree .
 
-// $(document).ready(function(){
-//   $('#menu-icon').click(function() {
-//     $('#sidebar-t').toggle("slide");
-//     $('.sidecontainer').animate({left:'+=35%'}, 500);
-//
-//     // $('#sidebar-t').on("mouseleave", function() {
-//     //   $('.sidecontainer').animate({left:'-=35%'}, 500);
-//     // });
-//   });
-// });
-
-
-// $(document).ready(function(){
-//   $('#menu-icon').click(function() {
-//     $('#menu-icon').each(function(i) {
-//       if (this.click == ":odd") {
-//         // $('#sidebar-t').toggle("slide");
-//         $('.sidecontainer').animate({left:'-=35%'}, 500);
-//       } else {
-//         // $('#sidebar-t').toggle("slide");
-//         $('.sidecontainer').animate({left:'+=35%'}, 500);
-//       }
-//     });
-//   });
-// });
-
-
 $(document).ready(function() {
   //navigation
   $('.welcome-page .header a, #sidebar a').on('click', function(e) {
