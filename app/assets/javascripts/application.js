@@ -16,13 +16,8 @@
 //= require_tree .
 
 $(document).ready(function() {
-  //navigation
-  $('.welcome-page .header a, #sidebar a').on('click', function(e) {
-    var scrollTo = $.attr(this, 'href').replace('/', '');
-    e.preventDefault();
-    $('.welcome-page').animate({scrollTop: $(scrollTo).offset().top, easing: 'easeInOutQuart', duration: 'slow'}, 1000);
-  });
 
+//SideBarNav
   var count = 0;
   $('#menu-icon').css({cursor: "pointer"}).on('click', function() {
     $('#menu-icon').each(function() {
