@@ -102,7 +102,7 @@ figure {
 }
 
 figure img {
-  max-width: 100%;
+  width: 100%;
   display: block;
   position: relative;
 }
@@ -235,6 +235,7 @@ box-shadow: inset 1px 0px 16px 0px rgba(0,0,0,0.75);
   color: $gray;
   margin: 20px 0 100px 0;
 }
+
 @media screen and (max-width: 1050px) {
 
   .project-logo{
