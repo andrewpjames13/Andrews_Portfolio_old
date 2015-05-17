@@ -10,6 +10,9 @@ Rails.application.routes.draw do
  get '/detrignome' => 'projects#detrignome'
  get '/whats-going-on' => 'projects#whatsgoingon'
  get '/octa' => 'projects#octa'
+ get '/workoutsonwheelz' => 'projects#wow'
+ get '/cartdriver' => 'projects#cartdriver'
+
  get '/signup' => 'users#new'
  post '/signup' => 'users#create'
  get '/signin' => 'sessions#new'
