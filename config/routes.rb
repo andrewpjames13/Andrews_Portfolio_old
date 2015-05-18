@@ -14,6 +14,7 @@ Rails.application.routes.draw do
  get '/cartdriver' => 'projects#cartdriver'
  get '/bear' => 'projects#bear'
  get '/thebornreadies' => 'projects#thebornreadies'
+ get '/gharmony' => 'projects#gharmony'
 
  get '/signup' => 'users#new'
  post '/signup' => 'users#create'
