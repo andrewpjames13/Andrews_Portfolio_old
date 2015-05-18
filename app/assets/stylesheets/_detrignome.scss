@@ -231,3 +231,13 @@ select{
 select:focus {
     outline-width: 0;
 }
+
+@-moz-document url-prefix() {
+select{
+    //  background-image: none;
+    //  background-color:blue;
+     background-repeat: no-repeat;
+     background-position: right center;
+     padding-right: 30px;
+  }
+}
