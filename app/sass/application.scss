@@ -1,0 +1,23 @@
+// run this compiler in terminal when working on sass
+// sass --watch sass:stylesheets
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+@import "reset";
+@import "colors";
+@import "layout";
+@import "type";
+@import "header";
+@import "sidebar";
+@import "footer";
+@import "knob";
+@import "detrignome";
+@import "whatsgoingon";
+@import "cartdriver";
+@import "workoutsonwheelz";
+@import "octa";
+@import "tbr";
+@import "bear";
+@import "gharmony";

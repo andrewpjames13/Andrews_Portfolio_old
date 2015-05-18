@@ -1,0 +1,243 @@
+@mixin transform($arguments) {
+  -webkit-transform: $arguments;
+  -moz-transform: $arguments;
+  -o-transform: $arguments;
+  -ms-transform: $arguments;
+  transform: $arguments;
+}
+
+@mixin transition($arguments) {
+  -webkit-transition: $arguments;
+  -moz-transition: $arguments;
+  -o-transition: $arguments;
+  transition: $arguments;
+}
+
+#slider-range-min{
+  margin:190px 0 0 270px;
+  width: 100px;
+  border-radius: 10px;
+  border-color: $yellow;
+  background-color: #2b1423;
+}
+.ui-widget-content{
+  background: none;
+}
+.ui-widget-header{
+  background: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+  background: #2b1423;
+  border-color: $yellow;
+  border-radius: 50%;
+}
+
+.detri-hero {
+  background-image: url('../images/Detra-gnome-bgtest.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.detri-container {
+  position: relative;
+  width: 400px;
+  height: 50em;
+  padding: 10% 0 0 0;
+  margin: 0 auto;
+}
+
+.detri-body{
+  position: absolute;
+  width:100%;
+  z-index:0;
+  // height: auto;
+  margin: 0 auto;
+
+}
+
+.eye-big {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: 65px auto 0 35%;
+  z-index: 3;
+  @include transition(margin 0.0s);
+}
+
+.small-eyes{
+  position: relative;
+  width: 40%;
+  height: 100px;
+  margin: 85px auto 0 30%;
+  z-index: 3;
+}
+
+.eye-left {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin-left: 0px;
+  float: left;
+  z-index: 3;
+  @include transition(margin 0.0s);
+}
+
+.movement {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin-left: 17px;
+  float: left;
+  z-index: 3;
+  // @include transition(margin 1s);
+
+}
+
+.on-btn {
+  position: relative;
+  float:left;
+  width: 47px;
+  height: 45px;
+  margin: 165px 0 0 25px;
+  padding: 12px 0 0 13px;
+  font-size: .9em;
+  color: $yellow;
+  background-image: url("../images/Detra-gnome-button.png");
+}
+
+.sig-btn {
+  position: relative;
+  float:left;
+  width: 80px;
+  height: 80px;
+  z-index:2;
+  margin: 100px 0 0 -20px;
+  padding: 28px 0 0 23px;
+  // font-size: 1.5em;
+  color: $yellow;
+  background-image: url("../images/Detra-gnome-screen.png");
+}
+
+.bpm-btn {
+  position: relative;
+  float:left;
+  width: 80px;
+  height: 80px;
+  z-index:2;
+  margin: 100px 0 0 0px;
+  padding: 20px 0 0 0;
+  font-size: 1.5em;
+  color: $yellow;
+  background-image: url("../images/Detra-gnome-screen.png");
+}
+
+input {
+    border: none;
+    color: $yellow;
+    font-size: 1em;
+    text-align: center;
+    background: none;
+    width:80px;
+}
+
+input:focus, span:focus {
+    outline-width: 0;
+}
+
+.needle-btn {
+  position: relative;
+  float:left;
+  width: 136px;
+  height: 151px;
+  z-index:2;
+  margin: 90px 0 -20px 0;
+  padding: 0 0 -20px 0;
+  background-image: url("../images/Detra-gnome-back-needle.png");
+  // @include transform(rotate(0deg));
+  // @include transition(all 0.0s ease-in-out);
+}
+
+.needle-con{
+  position: relative;
+  float:left;
+  width: 136px;
+  height: 151px;
+  z-index:2;
+  margin: 0 0 -20px 0;
+  padding: 0 0 -20px 0;
+  @include transform(rotate(-35deg));
+  // @include transition(all 0ms ease-in-out);
+
+}
+
+.needle-con2{
+  position: relative;
+  float:left;
+  width: 136px;
+  height: 151px;
+  z-index:2;
+  margin: 0 0 -20px 0;
+  padding: 0 0 -20px 0;
+  // @include transform(rotate(35deg));
+  @include transition(all 0ms ease-in-out);
+
+}
+
+.needle {
+  content: "";
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  width: 0;
+  height: 0;
+  border-radius:55px;
+  border-bottom: 110px solid $orange;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  @include transform(rotate(0deg));
+  transition: all 0s ease-in-out;
+}
+
+.needle-dot {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: 66px;
+  left: 65px;
+  z-index: 3;
+  // margin: 100px 0 100px 0;
+  // padding: 0 10px 0 0;
+
+  border-radius: 50%;
+  background-color: #2b1423;
+}
+
+select{
+  background-color: rgba(0,0,0,0);
+  border: none;
+  font-size: 1.4em;
+  color: $yellow;
+  -webkit-appearance: none;
+  background: url(GitHub_icon.png) no-repeat right;
+
+
+}
+
+select:focus {
+    outline-width: 0;
+}
+
+@-moz-document url-prefix() {
+select{
+    //  background-image: none;
+    //  background-color:blue;
+     background-repeat: no-repeat;
+     background-position: right center;
+     padding-right: 30px;
+  }
+}
