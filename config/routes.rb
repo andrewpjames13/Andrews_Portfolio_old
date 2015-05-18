@@ -12,6 +12,8 @@ Rails.application.routes.draw do
  get '/octa' => 'projects#octa'
  get '/workoutsonwheelz' => 'projects#wow'
  get '/cartdriver' => 'projects#cartdriver'
+ get '/bear' => 'projects#bear'
+ get '/thebornreadies' => 'projects#thebornreadies'
 
  get '/signup' => 'users#new'
  post '/signup' => 'users#create'
