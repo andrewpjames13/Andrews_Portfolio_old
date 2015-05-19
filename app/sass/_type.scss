@@ -41,6 +41,7 @@ h5 {
   font-size: 1.7em;
   font-weight: 300;
   color: $darkgreen;
+  text-align: center;
 }
 
 small, .font_small {
@@ -67,4 +68,11 @@ h5 {
   text-align: center;
 }
 
+}
+
+@media screen and (max-width: 1050px) {
+  h5 {
+    // font-size: 1.3em;
+    text-align: center;
+  }
 }
