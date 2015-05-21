@@ -988,8 +988,7 @@ select {
   border: none;
   font-size: 1.4em;
   color: #e1d8b6;
-  -webkit-appearance: none;
-  background: url(GitHub_icon.png) no-repeat right; }
+  -webkit-appearance: none; }
 
 select:focus {
   outline-width: 0; }

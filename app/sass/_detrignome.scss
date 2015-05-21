@@ -37,7 +37,6 @@
   background-image: url('../images/Detra-gnome-bgtest.jpg');
   background-position: center center;
   background-repeat: no-repeat;
-  // background-attachment: fixed;
   background-size: cover;
   background-color: #464646;
 }
@@ -54,7 +53,6 @@
   position: absolute;
   width:100%;
   z-index:0;
-  // height: auto;
   margin: 0 auto;
 
 }
@@ -93,7 +91,6 @@
   margin-left: 17px;
   float: left;
   z-index: 3;
-  // @include transition(margin 1s);
 
 }
 
@@ -117,7 +114,6 @@
   z-index:2;
   margin: 100px 0 0 -20px;
   padding: 28px 0 0 23px;
-  // font-size: 1.5em;
   color: $yellow;
   background-image: url("../images/Detra-gnome-screen.png");
 }
@@ -157,8 +153,7 @@ input:focus, span:focus {
   margin: 90px 0 -20px 0;
   padding: 0 0 -20px 0;
   background-image: url("../images/Detra-gnome-back-needle.png");
-  // @include transform(rotate(0deg));
-  // @include transition(all 0.0s ease-in-out);
+
 }
 
 .needle-con{
@@ -170,7 +165,6 @@ input:focus, span:focus {
   margin: 0 0 -20px 0;
   padding: 0 0 -20px 0;
   @include transform(rotate(-35deg));
-  // @include transition(all 0ms ease-in-out);
 
 }
 
@@ -182,7 +176,6 @@ input:focus, span:focus {
   z-index:2;
   margin: 0 0 -20px 0;
   padding: 0 0 -20px 0;
-  // @include transform(rotate(35deg));
   @include transition(all 0ms ease-in-out);
 
 }
@@ -210,9 +203,6 @@ input:focus, span:focus {
   bottom: 66px;
   left: 65px;
   z-index: 3;
-  // margin: 100px 0 100px 0;
-  // padding: 0 10px 0 0;
-
   border-radius: 50%;
   background-color: #2b1423;
 }
@@ -223,8 +213,6 @@ select{
   font-size: 1.4em;
   color: $yellow;
   -webkit-appearance: none;
-  background: url(GitHub_icon.png) no-repeat right;
-
 
 }
 
@@ -234,8 +222,6 @@ select:focus {
 
 @-moz-document url-prefix() {
 select{
-    //  background-image: none;
-    //  background-color:blue;
      background-repeat: no-repeat;
      background-position: right center;
      padding-right: 30px;
