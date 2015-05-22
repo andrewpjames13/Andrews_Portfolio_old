@@ -182,11 +182,8 @@ var bpmDelay = function(){
     if (sigVal == '5/8' || sigVal == '6/8'|| sigVal == '7/8'){
       speed = speed/2;
     }
-    console.log('before');
     window.clearInterval(turnedOn);
-    console.log('after');
     turnedOn = window.setInterval(function(){
-      console.log('inside');
       animation(speed, direction);
       if (direction == "+"){
         direction = "-";
