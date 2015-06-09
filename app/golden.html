@@ -1,0 +1,431 @@
+<html>
+  <head>
+    <title>Golden</title>
+    <link rel="stylesheet" href="stylesheets/golden-application.css" media="all">
+    <link rel="icon" href="images/favicon-golden.png" type="image/x-icon"/>
+
+    <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  </head>
+  <body>
+      <div class="col-4-5 content-float">
+        <div class="col-4-5 header black">
+          <h2>Golden</h2>
+        </div>
+        <div class="col-1-5 header language">
+          <div id ="eng" class="header f-right"> / English</div>
+          <div id="spanish" class="header f-right">Spanish </div>
+        </div>
+
+        <div id="content" class="col-5-5 black"></div>
+
+        <div class="col-5-5 footer black">
+
+        </div>
+      </div>
+
+      <div class="col-1-5 stat-con">
+        <div class="col-5-5 header white">
+
+        </div>
+        <div id="timer" class="col-5-5 box gray1">
+
+        </div>
+        <div class="col-5-5 box gray2">
+          <div class="col-12-12 completed-box">
+            <div class="completed-numbers">
+              <div class="completed">0</div>
+              <div class="slash">/</div>
+              <div class="total">0</div>
+            </div>
+
+          </div>
+
+          <div class="total-txt">Questions Complete</div>
+        </div>
+        <div class="col-5-5 box gray3">
+          <div class="percent">0%</div>
+          <div class="answered-txt">Answered Correctly</div>
+        </div>
+        <div class="col-5-5 box gray4">
+
+        </div>
+        <div class="col-5-5 footer gray5">
+
+        </div>
+      </div>
+
+      <script>
+        function translateText(response) {
+          $('#content').html("");
+          document.getElementById("content").innerHTML += response.data.translations[0].translatedText;
+        }
+
+        $('#spanish').on('click', function(){
+          var newScript = document.createElement('script');
+          newScript.type = 'text/javascript';
+          var sourceText = escape(document.getElementById("content").innerHTML);
+          var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyBshMObdPLaLpnImsmNL63Qf6jcr9EUIRo&source=en&target=es&callback=translateText&q=' + sourceText;
+          newScript.src = source;
+          document.getElementsByTagName('head')[0].appendChild(newScript);
+        });
+
+        $('#eng').on('click', function(){
+          var newScript = document.createElement('script');
+          newScript.type = 'text/javascript';
+          var sourceText = escape(document.getElementById("content").innerHTML);
+          var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyBshMObdPLaLpnImsmNL63Qf6jcr9EUIRo&source=es&target=en&callback=translateText&q=' + sourceText;
+          newScript.src = source;
+          document.getElementsByTagName('head')[0].appendChild(newScript);
+        });
+      </script>
+
+    <script type="text/jsx">
+    var standingQ = "";
+    var QOrA = "";
+    var quest = 0;
+    var inputVal = "";
+    var amountTotal = 0;
+    var completed = 0;
+    var percentage = "0%";
+    var ansCorrect = 1;
+    var ansTotal = 0;
+    var hrNext = "";
+
+    var PrepApp = React.createClass({
+      loadQuestionsFromServer: function() {
+        $.ajax({
+          url: this.props.url,
+          dataType: 'json',
+          cache: false,
+          success: function(data) {
+            this.setState({data: data.questions});
+          }.bind(this),
+          error: function(xhr, status, err) {
+            console.error(this.props.url, status, err.toString());
+          }.bind(this)
+        });
+      },
+      getInitialState: function() {
+        return{answered: false, value: "Start", question: quest, data: [], array:[]};
+      },
+      componentDidMount: function() {
+        this.loadQuestionsFromServer();
+        // setInterval(this.loadQuestionsFromServer, this.props.pollInterval);
+      },
+      // componentWillMount: function(){
+      //   this.loadQuestionsFromServer();
+      //   // setInterval(this.loadQuestionsFromServer, this.props.pollInterval);
+      // },
+      handleSubmit: function(e){
+        e.preventDefault();
+
+        if(array.length === 0 && this.state.value === "See Answer"){
+          return;
+          }else if(this.state.value === "Start" && this.state.answered === false){
+          this.setState({value:"See Answer"});
+          questionNodes(this.state);
+          questionAmount();
+          currentComplete();
+          $('.total').empty();
+          $('.completed').empty();
+          $('.total').append(amountTotal);
+          $('.completed').append(completed);
+
+        } else if(this.state.value === "See Answer"){
+          $('button[id=next]').prop( "disabled", true );
+          this.setState({answered: true});
+          this.setState({value:"Next Question"});
+        } else if (this.state.answered === false){
+          this.setState({answered: true});
+          this.setState({value:"Next Question"});
+
+        } else if (this.state.answered === true){
+          $('.completed').empty();
+
+          var DomState = this.state.data;
+          var dbUpdate = {};
+          if (DomState){
+            DomState.map(function (question){
+            if (question.correct === true){
+              dbUpdate = question;
+            }
+            return(
+              <div>
+                {dbUpdate}
+              </div>
+            );
+          });
+        }
+          this.setState({answered: false});
+          this.setState({value:"See Answer"});
+          this.setState({value:"See Answer"});
+          questionNodes(this.state);
+          currentComplete();
+          $('.completed').append(completed);
+          ansTotal = ansTotal + 1;
+
+          currentPercentage();
+          $('.percent').empty();
+          $('.percent').append(percentage);
+
+          // $.ajax({
+          //         url: this.props.url + "/" + dbUpdate.id,
+          //         dataType: 'json',
+          //         type: 'PATCH',
+          //         accept: "application/json",
+          //         data: {question:{correct: dbUpdate.correct}},
+          //         success: function(data) {
+          //           questionNodes(this.state);
+          //           this.setState({data: data.questions});
+          //         }.bind(this),
+          //         error: function(xhr, status, err) {
+          //           console.error(this.props.url, status, err.toString());
+          //         }.bind(this)
+          //       });
+        }
+      },
+      render: function(){
+        if(this.state.value === "Next Question"){
+          hrNext = <hr></hr>;
+        }
+        if (this.state.answered === false && this.state.value === "Start"){
+          QOrA = <PrepStart />;
+        } else if (this.state.answered === false && array.length === 0 && this.state.value === "See Answer"){
+          standingQ = <PrepEnd />;
+          QOrA = "";
+          hrNext= "";
+        } else if (this.state.answered === false && this.state.value === "See Answer"){
+          standingQ = "";
+          hrNext= "";
+          QOrA = <PrepQuestion data={this.state.data}/>;
+        } else if (this.state.answered === false){
+          QOrA = <PrepQuestion data={this.state.data}/>;
+        } else if (this.state.answered === true){
+          QOrA = <PrepAnswer />;
+        }
+        return(
+          <div className="prep-app">
+            {standingQ}
+            {QOrA}
+            <div className="col-1-25-5 button-container f-right">
+              <div className="col-1-5-5 button-box">
+                <form onSubmit={this.handleSubmit}>
+                {hrNext}
+                  <button id="next" type="submit" value={this.state.value}>{this.state.value}</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    });
+
+    var PrepStart = React.createClass({
+      render: function(){
+        return(
+          <div>
+          <div className="col-5-5 content-con">
+            <h1>
+            Start your interview Preparation.
+              You can thank me later when you{"'"}re Golden!
+            </h1>
+            </div>
+
+            <hr></hr>
+          </div>
+        )
+      }
+    });
+
+    var PrepEnd = React.createClass({
+      render: function(){
+        return(
+          <div>
+          <div className="col-5-5 content-con">
+
+          <h1>
+            Congrats You{"'"}re done!
+          </h1>
+          </div>
+          <hr></hr>
+          </div>
+        )
+      }
+    });
+
+    var PrepQuestion = React.createClass({
+      getInitialState: function(){
+        return{question: quest};
+      },
+      render: function(){
+
+        var arrayData = this.props.data
+        if (arrayData != []){
+          return(
+            <div className="prep-question">
+            <div className="col-5-5 content-con">
+              <h1>{array[this.state.question].question}</h1>
+            </div>
+
+            <hr></hr>
+            </div>
+          )
+
+        }
+      }
+    });
+
+    var PrepAnswer = React.createClass({
+      getInitialState: function(){
+        return{question: quest};
+      },
+      handleUpSubmit: function(e){
+        e.preventDefault();
+        $('#up').css("background-color", "#F4F4F4");
+        $('#down').css("background-color", "#272928");
+
+        array[this.state.question].correct = true;
+        this.setState({answered: true});
+
+        $('button[id=up]').prop( "disabled", true );
+        $('button[id=down]').prop( "disabled", false );
+        $('button[id=next]').prop( "disabled", false );
+
+      },
+      handleDownSubmit: function(e){
+        e.preventDefault();
+        $('#up').css("background-color", "#272928");
+        $('#down').css("background-color", "#F4F4F4");
+
+        array[this.state.question].correct = false;
+        this.setState({answered: true});
+
+        $('button[id=up]').prop( "disabled", false );
+        $('button[id=down]').prop( "disabled", true );
+        $('button[id=next]').prop( "disabled", false );
+
+      },
+      render: function(){
+        return(
+          <div className="prep-answer">
+          <div className="col-5-5 content-con">
+            <h1>{array[this.state.question].question}</h1>
+            <p>{array[this.state.question].answer}</p>
+          </div>
+            <div className="col-3-5-5 button-container f-left">
+
+              <hr></hr>
+              <div className="col-1-6-5 answer-button-box black f-left">
+              </div>
+
+              <div className="col-1-6-5 answer-button-box black f-right">
+                <form onSubmit={this.handleDownSubmit}>
+                  <button id="down" type="submit" value="down"><img src="images/thumbs-down.png" alt="thumbs-down"/></button>
+                </form>
+              </div>
+              <div className="col-1-6-5 answer-button-box black f-right">
+                <form onSubmit={this.handleUpSubmit}>
+                  <button id="up" type="submit" value="up"><img src="images/thumbs-up.png" alt="thumbs-up"/></button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        )
+      }
+    });
+
+    var array = [];
+    var questionNodes = function(state){
+      array = []
+      var d = state.data;
+      if (d){
+        d.map(function (question){
+        if (question.correct === false){
+          array.push(question)
+        }
+        return(
+          <div>
+            {shuffle(array)}
+          </div>
+        );
+      });
+    }
+  };
+
+  function shuffle(array) {
+  var num = array.length, t, index;
+
+  while (num) {
+    index = Math.floor(Math.random() * num--);
+    t = array[num];
+    array[num] = array[index];
+    array[index] = t;
+  }
+    return array;
+  }
+
+  function questionAmount(){
+    amountTotal = array.length;
+    return amountTotal;
+  }
+
+  function currentComplete(){
+    var complete = array.length;
+    completed = amountTotal - complete;
+    return completed;
+  }
+
+  function currentPercentage(){
+    if (ansTotal === 0 ){
+      percentage = "0%";
+    } else {
+    var complete = array.length;
+    completed = amountTotal - complete;
+    var percentageNum = Math.floor(completed/ansTotal*100);
+    var percentageString = percentageNum.toString();
+    percentage = percentageString + "%";
+    return percentage;
+  }
+  }
+
+  React.render(<PrepApp url="https://golden-prep.herokuapp.com/questions" />, document.getElementById('content'));
+
+
+  // Timer Component 2
+  var Timer = React.createClass({
+    getInitialState: function() {
+      return {secondsElapsed: 0};
+    },
+    tick: function() {
+      this.setState({secondsElapsed: this.state.secondsElapsed + 1});
+    },
+    componentDidMount: function() {
+      this.interval = setInterval(this.tick, 1000);
+    },
+    componentWillUnmount: function() {
+      clearInterval(this.interval);
+    },
+    render: function() {
+      return (
+        <div>
+          <div className="seconds">
+            {this.state.secondsElapsed}
+          </div>
+          <div className="seconds-txt">
+            Seconds have passed
+          </div>
+        </div>
+      );
+    }
+  });
+
+  var mountNode = document.getElementById('timer')
+  React.render(<Timer />, mountNode);
+
+
+    </script>
+  </body>
+</html>
