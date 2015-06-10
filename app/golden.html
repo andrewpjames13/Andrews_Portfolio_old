@@ -57,28 +57,28 @@
       </div>
 
       <script>
-        function translateText(response) {
-          $('#content').html("");
-          document.getElementById("content").innerHTML += response.data.translations[0].translatedText;
-        }
+      function translateText(response) {
+        $('.content-con').empty();
+        $('.content-con').append(response.data.translations[0].translatedText);
+      }
 
-        $('#spanish').on('click', function(){
-          var newScript = document.createElement('script');
-          newScript.type = 'text/javascript';
-          var sourceText = escape(document.getElementById("content").innerHTML);
-          var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyBshMObdPLaLpnImsmNL63Qf6jcr9EUIRo&source=en&target=es&callback=translateText&q=' + sourceText;
-          newScript.src = source;
-          document.getElementsByTagName('head')[0].appendChild(newScript);
-        });
+      $('#spanish').on('click', function(){
+        var newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        var sourceText = escape(document.getElementsByClassName("content-con")[0].innerHTML);
+        var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyBshMObdPLaLpnImsmNL63Qf6jcr9EUIRo&source=en&target=es&callback=translateText&q=' + sourceText;
+        newScript.src = source;
+        document.getElementsByTagName('head')[0].appendChild(newScript);
+      });
 
-        $('#eng').on('click', function(){
-          var newScript = document.createElement('script');
-          newScript.type = 'text/javascript';
-          var sourceText = escape(document.getElementById("content").innerHTML);
-          var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyBshMObdPLaLpnImsmNL63Qf6jcr9EUIRo&source=es&target=en&callback=translateText&q=' + sourceText;
-          newScript.src = source;
-          document.getElementsByTagName('head')[0].appendChild(newScript);
-        });
+      $('#eng').on('click', function(){
+        var newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        var sourceText = escape(document.getElementsByClassName("content-con")[0].innerHTML);
+        var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyBshMObdPLaLpnImsmNL63Qf6jcr9EUIRo&source=es&target=en&callback=translateText&q=' + sourceText;
+        newScript.src = source;
+        document.getElementsByTagName('head')[0].appendChild(newScript);
+      });
       </script>
 
     <script type="text/jsx">
