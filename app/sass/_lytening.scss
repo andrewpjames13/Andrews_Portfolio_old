@@ -1,5 +1,5 @@
-.bear-hero{
-  background-image: url('../images/intro-bear.jpg');
+.lytening-hero{
+  background-image: url('../images/lytening-hero.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   // background-attachment: fixed;
@@ -7,7 +7,7 @@
   background-color: #464646;
 }
 
-.bear-container {
+.lytening-container {
   position: relative;
   width: 400px;
   height: 50em;
@@ -15,15 +15,8 @@
   margin: 0 auto;
 }
 
-.bear-deck{
-  position: relative;
-  width:100%;
-  height:auto;
-  margin: 5% 0 5% 0;
-}
-
 @media screen and (max-width: 700px) {
-  .bear-container {
+  .lytening-container {
     height: 30em;
   }
 }

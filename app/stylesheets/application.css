@@ -1012,6 +1012,9 @@ select:focus {
   padding: 10% 0 0 0;
   margin: 0 auto; }
 
+@media screen and (max-width: 700px) {
+  .wgo-container {
+    height: 30em; } }
 .cart-driver-hero {
   background-image: url("../images/cart-driver-hero.jpg");
   background-position: center center;
@@ -1026,6 +1029,9 @@ select:focus {
   padding: 10% 0 0 0;
   margin: 0 auto; }
 
+@media screen and (max-width: 700px) {
+  .cart-driver-container {
+    height: 30em; } }
 .wow-hero {
   background-image: url("../images/wow-hero.jpg");
   background-position: center center;
@@ -1040,6 +1046,9 @@ select:focus {
   padding: 10% 0 0 0;
   margin: 0 auto; }
 
+@media screen and (max-width: 700px) {
+  .wow-container {
+    height: 30em; } }
 .octa-hero {
   background-image: url("../images/octa-hero.jpg");
   background-position: center center;
@@ -1054,6 +1063,9 @@ select:focus {
   padding: 10% 0 0 0;
   margin: 0 auto; }
 
+@media screen and (max-width: 700px) {
+  .octa-container {
+    height: 30em; } }
 .tbr-hero {
   background-image: url("../images/tbr-hero.jpg");
   background-position: center center;
@@ -1068,6 +1080,9 @@ select:focus {
   padding: 10% 0 0 0;
   margin: 0 auto; }
 
+@media screen and (max-width: 700px) {
+  .tbr-container {
+    height: 30em; } }
 .bear-hero {
   background-image: url("../images/intro-bear.jpg");
   background-position: center center;
@@ -1088,6 +1103,9 @@ select:focus {
   height: auto;
   margin: 5% 0 5% 0; }
 
+@media screen and (max-width: 700px) {
+  .bear-container {
+    height: 30em; } }
 .gharmony-hero {
   background-image: url("../images/gharmony-hero.jpg");
   background-position: center center;
@@ -1101,5 +1119,60 @@ select:focus {
   height: 50em;
   padding: 10% 0 0 0;
   margin: 0 auto; }
+
+@media screen and (max-width: 700px) {
+  .gharmony-container {
+    height: 30em; } }
+.golden-hero {
+  background-image: url("../images/golden-hero.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #464646; }
+
+.golden-container {
+  position: relative;
+  width: 400px;
+  height: 50em;
+  padding: 10% 0 0 0;
+  margin: 0 auto; }
+
+@media screen and (max-width: 700px) {
+  .golden-container {
+    height: 30em; } }
+.lytening-hero {
+  background-image: url("../images/lytening-hero.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #464646; }
+
+.lytening-container {
+  position: relative;
+  width: 400px;
+  height: 50em;
+  padding: 10% 0 0 0;
+  margin: 0 auto; }
+
+@media screen and (max-width: 700px) {
+  .lytening-container {
+    height: 30em; } }
+.united-stats-hero {
+  background-image: url("../images/united-stats-hero.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #464646; }
+
+.united-stats-container {
+  position: relative;
+  width: 400px;
+  height: 50em;
+  padding: 10% 0 0 0;
+  margin: 0 auto; }
+
+@media screen and (max-width: 700px) {
+  .united-stats-container {
+    height: 30em; } }
 
 /*# sourceMappingURL=application.css.map */
