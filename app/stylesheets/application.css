@@ -352,8 +352,11 @@ small, .font_small {
   h5 {
     text-align: center; } }
 .logo {
-  margin: -8px auto;
-  display: block; }
+  margin: -1px 29px 0 61px;
+  display: block;
+  width: 52px;
+  height: auto;
+  fill: #333333; }
 
 header {
   background: #05dba7;
