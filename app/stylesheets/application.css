@@ -242,7 +242,9 @@ li {
   margin: 0; }
 
 .project-logo {
-  margin: 5% 0 0 0; }
+  margin: 5% 0 0 0;
+  fill: white;
+  width: 8%; }
 
 .project-p {
   width: 100%;
