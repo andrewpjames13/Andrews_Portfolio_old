@@ -352,7 +352,7 @@ small, .font_small {
   h5 {
     text-align: center; } }
 .logo {
-  margin: -1px 29px 0 61px;
+  margin: 0 auto;
   display: block;
   width: 52px;
   height: auto;
