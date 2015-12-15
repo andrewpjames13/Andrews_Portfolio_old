@@ -892,36 +892,41 @@ a.foothov:hover {
 .on-btn {
   position: relative;
   float: left;
-  width: 47px;
+  width: 45px;
   height: 45px;
-  margin: 165px 0 0 25px;
+  margin: 165px 0 0 27px;
   padding: 12px 0 0 13px;
   font-size: .9em;
   color: #e1d8b6;
-  background-image: url("../images/Detra-gnome-button.png"); }
+  border: 1px solid #e1d8b6;
+  border-radius: 50%; }
 
 .sig-btn {
   position: relative;
   float: left;
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   z-index: 2;
-  margin: 100px 0 0 -20px;
-  padding: 28px 0 0 23px;
+  margin: 100px 0 0 -17px;
+  padding: 23px 0 0 20px;
   color: #e1d8b6;
-  background-image: url("../images/Detra-gnome-screen.png"); }
+  border: 1px solid #e1d8b6;
+  border-radius: 50%;
+  background-color: #2b1423; }
 
 .bpm-btn {
   position: relative;
   float: left;
-  width: 80px;
-  height: 80px;
+  width: 75px;
+  height: 75px;
   z-index: 2;
-  margin: 100px 0 0 0px;
-  padding: 20px 0 0 0;
+  margin: 100px 0 0 3px;
+  padding: 15px 0 0 0;
   font-size: 1.5em;
   color: #e1d8b6;
-  background-image: url("../images/Detra-gnome-screen.png"); }
+  border: 1px solid #e1d8b6;
+  border-radius: 50%;
+  background-color: #2b1423; }
 
 input {
   border: none;
@@ -929,7 +934,7 @@ input {
   font-size: 1em;
   text-align: center;
   background: none;
-  width: 80px; }
+  width: 75px; }
 
 input:focus, span:focus {
   outline-width: 0; }
