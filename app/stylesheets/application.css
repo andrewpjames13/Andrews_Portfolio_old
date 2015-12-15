@@ -514,13 +514,15 @@ a.foothov:hover {
   padding: 20% 0 0 0;
   margin: 0 auto; }
 
-.knob-shadow {
-  position: relative;
-  background-image: url("../images/knob-shadow.png");
-  background-repeat: no-repeat;
-  width: 400px;
-  height: 780px;
-  margin: 0 auto; }
+.knob-con {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
 
 .knob-surround {
   position: relative;
