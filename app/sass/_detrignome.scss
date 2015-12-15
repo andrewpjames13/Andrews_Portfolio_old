@@ -82,6 +82,9 @@
   float: left;
   z-index: 3;
   @include transition(margin 0.0s);
+  svg{
+    width: 135px;
+  }
 }
 
 .movement {

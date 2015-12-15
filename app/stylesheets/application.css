@@ -878,6 +878,8 @@ a.foothov:hover {
   -moz-transition: margin 0s;
   -o-transition: margin 0s;
   transition: margin 0s; }
+  .eye-left svg {
+    width: 135px; }
 
 .movement {
   position: absolute;
