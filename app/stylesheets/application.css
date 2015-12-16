@@ -830,7 +830,7 @@ a.foothov:hover {
   border-radius: 50%; }
 
 .detri-hero {
-  background-image: url("../images/Detra-gnome-bgtest.jpg");
+  background-image: url("../images/detra-gnome-bg.svg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -840,8 +840,14 @@ a.foothov:hover {
   position: relative;
   width: 400px;
   height: 50em;
-  padding: 10% 0 0 0;
+  padding: 9% 0 0 0;
   margin: 0 auto; }
+  @media screen and (max-width: 1350px) {
+    .detri-container {
+      padding: 14% 0 0 0; } }
+  @media screen and (max-width: 550px) {
+    .detri-container {
+      padding: 19% 0 0 0; } }
 
 .detri-body {
   position: absolute;
