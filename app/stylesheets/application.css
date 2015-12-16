@@ -48,6 +48,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+::selection {
+  background-color: #2F2F2F;
+  /* WebKit/Blink Browsers */
+  color: #05dba7; }
+
+::-moz-selection {
+  background-color: #2F2F2F;
+  /* Gecko Browsers */
+  color: #05dba7; }
+
 .container {
   margin: 0 auto;
   max-width: 1508px;

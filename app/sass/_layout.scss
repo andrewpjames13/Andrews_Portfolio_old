@@ -1,3 +1,11 @@
+::selection {
+  background-color: $darkgray; /* WebKit/Blink Browsers */
+  color: $green;
+}
+::-moz-selection {
+  background-color: $darkgray; /* Gecko Browsers */
+  color: $green;
+}
 .container {
   margin: 0 auto;
   max-width: 1508px;
